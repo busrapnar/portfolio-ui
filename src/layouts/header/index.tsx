@@ -1,28 +1,34 @@
 import { Link } from 'react-router-dom';
-import { IoLogInOutline } from "react-icons/io5";
+import { IoLogInOutline, IoMenu, IoClose } from "react-icons/io5";
 import { useState, useEffect, useRef, MouseEvent } from 'react';
 import Popup from '../../components/Popup';
 
 const Header: React.FC = () => {
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
 
     const handleSignInClick = (): void => {
         setIsPopupOpen(true);
+        setIsMenuOpen(false); // Hamburger menüyü kapat
     };
 
     const closePopup = (): void => {
         setIsPopupOpen(false);
     };
 
-    const handleClickOutside = (event: MouseEvent): void => {
+    const handleClickOutside = (event: MouseEvent) => {
         if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
             closePopup();
         }
     };
 
+    const toggleMenu = (): void => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     useEffect(() => {
-        if (isPopupOpen) {
+        if (isPopupOpen || isMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -31,7 +37,7 @@ const Header: React.FC = () => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [isPopupOpen]);
+    }, [isPopupOpen, isMenuOpen]);
 
     return (
         <header className="py-10">
@@ -46,14 +52,16 @@ const Header: React.FC = () => {
                     </Link>
                 </div>
                 <div className="flex items-center gap-4 lg:hidden">
-                    <button id="menu-toggle" className="hamburger" aria-label="Menu" aria-expanded="false">
-                        <svg className="w-12 h-12 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path fillRule="evenodd" clipRule="evenodd"
-                                d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-                        </svg>
+                    <button 
+                        className="hamburger" 
+                        aria-label="Menu" 
+                        aria-expanded={isMenuOpen ? "true" : "false"}
+                        onClick={toggleMenu}
+                    >
+                        <IoMenu className='h-12 w-12'/>
                     </button>
                 </div>
-                <div className="hidden lg:flex items-center justify-center gap-12">
+                <div className={`lg:flex items-center justify-center gap-12 hidden`}>
                     <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                         to="/videos">Eğitimler</Link>
                     <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
@@ -66,7 +74,7 @@ const Header: React.FC = () => {
                         onClick={handleSignInClick}
                         className="inline-flex gap-2 items-center cursor-pointer rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sign-in-button"
                     >
-                        <IoLogInOutline />
+                        <IoLogInOutline className='h-6 w-6'/>
                         Sign In
                     </button>
                 </div>
@@ -78,6 +86,33 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             )}
+            {/* Hamburger Menu */}
+            <div className={`${isMenuOpen ? 'fixed' : 'hidden'} lg:hidden top-0 right-0 bg-white h-full w-64 shadow-lg z-10`}>
+                <div className="flex justify-end items-center px-4 py-2">
+                    <button 
+                        id="menu-close" 
+                        aria-label="Close Menu" 
+                        className="focus:outline-none"
+                        onClick={toggleMenu}
+                    >
+                        <IoClose className='w-6 h-6 '/>
+                    </button>
+                </div>
+                <div className="flex flex-col gap-4 justify-center items-end text-xl">
+                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                        to="/videos">Eğitimler</Link>
+                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                        to="/photos">Fotoğraflar</Link>
+                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                        to="/post.html">Yazılar</Link>
+                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                        to="/bookmarks.html">Kaynaklar</Link>
+                    <button onClick={handleSignInClick}
+                        className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button">Sign
+                        In
+                    </button>
+                </div>
+            </div>
         </header>
     );
 };
