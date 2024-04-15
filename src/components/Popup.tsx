@@ -5,7 +5,7 @@ type Props = {}
 const Popup = (props: Props) => {
   return (
     <div
-        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white  shadow-lg p-6 rounded-lg z-20">
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white opacity-1 shadow-lg p-6 rounded-lg z-20">
         <div className="p-12">
             <div className="flex flex-col p-6 space-y-1">
                 <h3 className="font-semibold tracking-tight text-4xl">Create an account</h3>

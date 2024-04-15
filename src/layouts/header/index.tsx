@@ -80,8 +80,8 @@ const Header: React.FC = () => {
                 </div>
             </nav>
             {isPopupOpen && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                    <div ref={popupRef} className="bg-white p-8 rounded-md">
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-10">
+                    <div ref={popupRef} >
                         <Popup />
                     </div>
                 </div>
@@ -90,7 +90,6 @@ const Header: React.FC = () => {
             <div className={`${isMenuOpen ? 'fixed' : 'hidden'} lg:hidden top-0 right-0 bg-white h-full w-64 shadow-lg z-10`}>
                 <div className="flex justify-end items-center px-4 py-2">
                     <button 
-                        id="menu-close" 
                         aria-label="Close Menu" 
                         className="focus:outline-none"
                         onClick={toggleMenu}
