@@ -23,7 +23,6 @@ const CourseItem: React.FC<CourseItemProps> = ({ title, href, videoCount }) => {
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                 />
-                <span className={`checkbox ${isChecked ? 'checked' : ''}`}></span>
             </label>
             <h5 className="grow font-medium">
                 <a href={href}>{title}</a>

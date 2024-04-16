@@ -19,8 +19,28 @@ const Videos = (props: Props) => {
           <InformationCard title="IZLENME" informationPath="" information="1,3 Mn"/>
           </div>
           <Sponsor />
+          <div>
           <Headers header="Frontend 101"/>
+
           <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+
+          </div>
+          <div>
+          <Headers header="Frontend 102"/>
+          <div>
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          <CourseItem title="Sıfırdan CSS Eğitimi" videoCount="15 Videos" href="" />
+          </div>
+          </div>
 
     </div>
   );
