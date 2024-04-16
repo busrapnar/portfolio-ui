@@ -4,7 +4,9 @@ type Props = {}
 
 const Bookmarks = (props: Props) => {
   return (
-    <div>Bookmarks</div>
+    <div className="flex flex-col gap-20">
+        
+    </div>
   )
 }
 

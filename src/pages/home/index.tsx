@@ -3,25 +3,14 @@ import Box from "../../components/Box";
 import Banner from "../../components/Banner";
 import SocialMedia from "../../components/SocialMedia";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import Description from "../../components/Description";
 
 type Props = {};
 
 const Home = (props: Props) => {
   return (
     <div className="flex flex-col gap-20">
-      <div className="mt-20 px-6 py-10 border border-gray-300 bg-white opacity-75 rounded-lg">
-        <p className="text-xl">
-          Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi paylaştığım
-          bir sayfama hoş geldiniz!
-          <br />
-          Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma
-          tekniklerini ve dil becerilerini geliştirme yollarını
-          keşfedebilirsiniz. <br />
-          Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. <br />
-          Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil
-          topluluğuna katılmaya <b>hazır mısınız? 🌍💬</b>
-        </p>
-      </div>
+      <Description content="Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi paylaştığım bir sayfama hoş geldiniz! Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma tekniklerini ve dil becerilerini geliştirme yollarını keşfedebilirsiniz. Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil topluluğuna katılmaya hazır mısınız? 🌍💬" /> 
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
         <Box
           title="Gramer"

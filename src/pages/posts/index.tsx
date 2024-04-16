@@ -4,7 +4,7 @@ type Props = {}
 
 const Posts = (props: Props) => {
   return (
-    <div>Posts</div>
+    <div className="flex flex-col gap-20">Posts</div>
   )
 }
 
