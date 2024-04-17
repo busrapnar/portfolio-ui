@@ -4,13 +4,34 @@ import Banner from "../../components/Banner";
 import SocialMedia from "../../components/SocialMedia";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import Description from "../../components/Description";
+import Sponsor from "../../components/Sponsor";
 
 type Props = {};
 
 const Home = (props: Props) => {
   return (
     <div className="flex flex-col gap-20">
-      <Description content="Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi paylaştığım bir sayfama hoş geldiniz! Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma tekniklerini ve dil becerilerini geliştirme yollarını keşfedebilirsiniz. Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil topluluğuna katılmaya hazır mısınız? 🌍💬" /> 
+      <div className="mt-10 px-6 py-10 border border-gray-300 bg-white opacity-75 rounded-lg">
+            <p className="text-xl">
+                Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi
+                paylaştığım bir sayfama hoş geldiniz!
+                <br/>
+                Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma
+                tekniklerini ve dil becerilerini geliştirme yollarını
+                keşfedebilirsiniz. <br/>
+                Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. <br/>
+                Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil
+                topluluğuna katılmaya <b>hazır mısınız? 🌍💬</b>
+            </p>
+        </div>
+      <div className="mt-16">
+            <h3 className="font-bold text-3xl">Kendine değer kat!</h3>
+            <p className="font-normal text-base font-montserrat mt-5">
+                İyi bir kariyer için, doğru bir başlangıç gerekir. Prototürk'de bir çok dil ve teknolojiye ait derslerle
+                doğru bir
+                başlangıç yapmaya hazırsın!
+            </p>
+        </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
         <Box
           title="Gramer"
@@ -28,8 +49,24 @@ const Home = (props: Props) => {
           imageSrc="./images/communication.png"
         />
       </div>
-      <Banner />
-      <div className="mt-20 grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
+      <div>
+      <div className="mt-16">
+            <h3 className="font-bold text-3xl">Katkılarla daha güçlüyüz!</h3>
+            <p className="font-normal text-base font-montserrat mt-5">
+                Kesintisiz İngilizce öğrenme yolculuğumuz için, doğru bir başlangıç şarttır. Ben de bu kesintisiz
+                yolculuğumuzda sizlere öğrendiğim her şeyi aktarmak istiyorum ve sponsor olmak isterseniz, hazırım!
+            </p>
+        </div>
+        <Sponsor/>
+      </div>
+      <div className="mt-16">
+            <h3 className="font-bold text-3xl">Yenilikleri birlikte takip edelim!</h3>
+            <p className="font-normal text-base font-montserrat  mt-5">
+                Öğrendiğim şeylerle ilgili hazırladığım son içeriklerden anında haberdar olmak için sosyal
+                medya hesabımı takip etmeyi unutma!
+            </p>
+        </div>
+      <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
         <SocialMedia
           iconName={FaInstagram}
           title="Instagram'da @birdilingilizce hesabını takip etmeyi unutma!"

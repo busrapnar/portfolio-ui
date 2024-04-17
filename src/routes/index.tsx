@@ -5,6 +5,7 @@ import Bookmarks from "../pages/bookmarks";
 import Posts from "../pages/posts";
 import Videos from "../pages/videos";
 import Photos from "../pages/photos";
+import Admin from "../pages/admin";
 
 export default function Router(){
     return(
@@ -16,6 +17,7 @@ export default function Router(){
                 <Route path="/photos" element={<Photos/>} />
                 <Route path="/videos" element={<Videos/>} />
                 <Route path="/posts" element={<Posts/>} />
+                <Route path="/admin" element={<Admin/>} />
             </Route>
         </Routes>
         </BrowserRouter>

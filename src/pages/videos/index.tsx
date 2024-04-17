@@ -3,7 +3,7 @@ import Description from "../../components/Description";
 import InformationCard from "../../components/InformationCard";
 import Sponsor from "../../components/Sponsor";
 import Headers from "../../components/Headers";
-import CourseItem from "../../components/course-item/CourseItem";
+import CourseItem from "../../components/CourseItem";
 
 type Props = {};
 

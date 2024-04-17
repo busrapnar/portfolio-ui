@@ -2,8 +2,13 @@ import { Link } from 'react-router-dom';
 import { IoLogInOutline, IoMenu, IoClose } from "react-icons/io5";
 import { useState, useEffect, useRef, MouseEvent } from 'react';
 import Popup from '../../components/Popup';
+import AuthButtons from '../../components/AuthButtons';
 
 const Header: React.FC = () => {
+    const isAnonymous = true; 
+    const isUser = false; 
+
+    
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
@@ -40,7 +45,7 @@ const Header: React.FC = () => {
     }, [isPopupOpen, isMenuOpen]);
 
     return (
-        <header className="py-10">
+        <header className="py-10 border-b-4 border-indigo-500">
             <nav className="flex items-center justify-between text-lg">
                 <div>
                     <Link className="grow flex gap-2 no-underline rounded-full items-center" to="/">
@@ -70,13 +75,7 @@ const Header: React.FC = () => {
                         to="/posts">Yazılar</Link>
                     <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                         to="/bookmarks">Kaynaklar</Link>
-                    <button
-                        onClick={handleSignInClick}
-                        className="inline-flex gap-2 items-center cursor-pointer rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sign-in-button"
-                    >
-                        <IoLogInOutline className='h-6 w-6'/>
-                        Sign In
-                    </button>
+                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
                 </div>
             </nav>
             {isPopupOpen && (
