@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Checkbox } from './ui/checkbox';
 
 interface CourseItemProps {
     title: string;
@@ -15,14 +16,7 @@ const CourseItem: React.FC<CourseItemProps> = ({ title, href, videoCount }) => {
 
     return (
         <article className="group flex items-start gap-3 px-2 py-4 transition border-b border-b-zinc-200 hover:bg-white">
-            <label className="mt-0.5 flex size-5 shrink-0 cursor-pointer items-center justify-center rounded border border-zinc-300 text-zinc-900 shadow-sm">
-                <input
-                    className="pointer-events-none absolute opacity-0"
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                />
-            </label>
+            <Checkbox/>
             <h5 className="grow font-medium">
                 <a href={href}>{title}</a>
             </h5>

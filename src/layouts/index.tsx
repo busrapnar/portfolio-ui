@@ -3,9 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import {Outlet} from 'react-router-dom'
 
-type Props = {}
-
-const Layout = (props: Props) => {
+const Layout = () => {
   return (
     <main className="max-w-screen-xl mx-auto">
         <Header/>
