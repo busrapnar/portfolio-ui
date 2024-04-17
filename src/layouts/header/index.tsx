@@ -1,21 +1,20 @@
+import React, { useState, useEffect, useRef, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { IoLogInOutline, IoMenu, IoClose } from "react-icons/io5";
-import { useState, useEffect, useRef, MouseEvent } from 'react';
+import { IoMenu, IoClose } from "react-icons/io5";
 import Popup from '../../components/Popup';
 import AuthButtons from '../../components/AuthButtons';
 
 const Header: React.FC = () => {
-    const isAnonymous = true; 
-    const isUser = false; 
-
-    
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
 
+    const isAnonymous = false; // Burada kullanıcı durumunu kontrol etmelisiniz
+    const isUser = true; // Burada kullanıcı durumunu kontrol etmelisiniz
+
     const handleSignInClick = (): void => {
         setIsPopupOpen(true);
-        setIsMenuOpen(false); // Hamburger menüyü kapat
+        setIsMenuOpen(false);
     };
 
     const closePopup = (): void => {
@@ -67,20 +66,31 @@ const Header: React.FC = () => {
                     </button>
                 </div>
                 <div className={`lg:flex items-center justify-center gap-12 hidden`}>
-                    <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                        to="/videos">Eğitimler</Link>
-                    <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                        to="/photos">Fotoğraflar</Link>
-                    <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                        to="/posts">Yazılar</Link>
-                    <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                        to="/bookmarks">Kaynaklar</Link>
+                    {!isUser && (
+                        <>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/videos">Eğitimler</Link>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/photos">Fotoğraflar</Link>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/bookmarks">Kaynaklar</Link>
+                        </>
+                    )}
+                    {isUser && (
+                        <>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/users">Kullanıcılar</Link>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/settings">Site Ayarları</Link>
+                            
+                        </>
+                    )}
                     <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
                 </div>
             </nav>
             {isPopupOpen && (
                 <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-10">
-                    <div ref={popupRef} >
+                    <div ref={popupRef}>
                         <Popup />
                     </div>
                 </div>
@@ -93,22 +103,42 @@ const Header: React.FC = () => {
                         className="focus:outline-none"
                         onClick={toggleMenu}
                     >
-                        <IoClose className='w-6 h-6 '/>
+                        <IoClose className='w-6 h-6'/>
                     </button>
                 </div>
                 <div className="flex flex-col gap-4 justify-center items-end text-xl">
-                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                        to="/videos">Eğitimler</Link>
-                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                        to="/photos">Fotoğraflar</Link>
-                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                        to="/post.html">Yazılar</Link>
-                    <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                        to="/bookmarks.html">Kaynaklar</Link>
-                    <button onClick={handleSignInClick}
-                        className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button">Sign
-                        In
-                    </button>
+                    {!isUser && (
+                        <>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/videos">Eğitimler</Link>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/photos">Fotoğraflar</Link>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/bookmarks">Kaynaklar</Link>
+                        </>
+                    )}
+                    {isUser && (
+                        <>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/users">Kullanıcılar</Link>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/settings">Site Ayarları</Link>
+                            <button 
+                                className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button"
+                                onClick={() => { /* Çıkış işlemi buraya gelecek */ }}
+                            >
+                                Çıkış Yap
+                            </button>
+                        </>
+                    )}
+                    {isAnonymous && (
+                        <button 
+                            className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button"
+                            onClick={handleSignInClick}
+                        >
+                            Sign In
+                        </button>
+                    )}
                 </div>
             </div>
         </header>
