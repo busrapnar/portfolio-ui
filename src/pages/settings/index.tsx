@@ -9,7 +9,7 @@ type Props = {};
 const Settings = (props: Props) => {
   return (
     <div className="">
-      <h1 className="text-lg">Profile</h1>
+      <h1 className="text-lg font-medium">Profile</h1>
       <p className="text-muted-foreground text-sm">
         This is how others will see you on the site.
       </p>

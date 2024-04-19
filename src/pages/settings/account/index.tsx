@@ -1,8 +1,8 @@
-import { format } from "date-fns"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Input } from '../../../components/ui/input'
-import { useForm } from 'react-hook-form'
+import { format } from "date-fns";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "../../../components/ui/input";
+import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
@@ -11,41 +11,65 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../../../components/ui/form'
-import { Button } from '../../../components/ui/button'
-import { CalendarIcon } from 'lucide-react'
+} from "../../../components/ui/form";
+import { Button } from "../../../components/ui/button";
+import { CalendarIcon, Check, ChevronsUpDown } from "lucide-react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '../../../components/ui/popover'
-import { Calendar } from '../../../components/ui/calendar'
-import { cn } from '../../../lib/utils'
+} from "../../../components/ui/popover";
+import { Calendar } from "../../../components/ui/calendar";
+import { cn } from "../../../lib/utils";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '../../../components/ui/select'
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "../../../components/ui/command";
+import { toast } from "../../../components/ui/use-toast";
 
-type Props = {}
+type Props = {};
+const languages = [
+  { label: "English", value: "en" },
+  { label: "French", value: "fr" },
+  { label: "German", value: "de" },
+  { label: "Spanish", value: "es" },
+  { label: "Portuguese", value: "pt" },
+  { label: "Russian", value: "ru" },
+  { label: "Japanese", value: "ja" },
+  { label: "Korean", value: "ko" },
+  { label: "Chinese", value: "zh" },
+] as const;
+
 const FormSchema = z.object({
   dob: z.date({
     required_error: "A date of birth is required.",
   }),
-})
+  language: z.string({
+    required_error: "Please select a language.",
+  }),
+});
 
 const Account = (props: Props) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-  })
+  });
 
+  function onSubmit(data: z.infer<typeof FormSchema>) {
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
+  }
 
   return (
-    <div >
+    <div>
       <h1 className="text-lg font-medium">Account</h1>
       <p className="text-muted-foreground text-sm">
         Update your account settings. Set your preferred language and timezone.
@@ -58,9 +82,9 @@ const Account = (props: Props) => {
       <div className="mt-8 grid gap-12">
         <Form {...form}>
           <form className="grid gap-2">
-            <FormLabel className='font-medium text-sm'>Name</FormLabel>
+            <FormLabel className="font-medium text-sm">Name</FormLabel>
             <Input id="name" placeholder="name" />
-            <FormDescription className='text-muted-foreground text-sm'>
+            <FormDescription className="text-muted-foreground text-sm">
               This is your public display name. It can be your real name or a
               pseudonym. You can only change this once every 30 days.
             </FormDescription>
@@ -111,36 +135,77 @@ const Account = (props: Props) => {
                 </FormItem>
               )}
             />
-
-          </form>
-          <form className='grid gap-2'>
-            <FormLabel>Language</FormLabel>
-            <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select Language" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>
-                    
-                  </SelectLabel>
-                  <SelectItem value="apple">English</SelectItem>
-                  <SelectItem value="banana">French</SelectItem>
-                  <SelectItem value="blueberry">German</SelectItem>
-                  <SelectItem value="grapes">Spanish</SelectItem>
-                  <SelectItem value="pineapple">Portuguese</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-            <FormDescription>This is the language that will be used in the dashboard.</FormDescription>
           </form>
         </Form>
-        <Button className='w-[138px]'>Update Account</Button>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="language"
+              render={({ field }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel>Language</FormLabel>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant="outline"
+                          role="combobox"
+                          className={cn(
+                            "w-[200px] justify-between",
+                            !field.value && "text-muted-foreground"
+                          )}
+                        >
+                          {field.value
+                            ? languages.find(
+                                (language) => language.value === field.value
+                              )?.label
+                            : "Select language"}
+                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[200px] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search language..." />
+                        <CommandEmpty>No language found.</CommandEmpty>
+                        <CommandGroup>
+                          {languages.map((language) => (
+                            <CommandItem
+                              value={language.label}
+                              key={language.value}
+                              onSelect={() => {
+                                form.setValue("language", language.value);
+                              }}
+                            >
+                              <Check
+                                className={cn(
+                                  "mr-2 h-4 w-4",
+                                  language.value === field.value
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                                )}
+                              />
+                              {language.label}
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
+                  <FormDescription>
+                    This is the language that will be used in the dashboard.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </form>
+        </Form>
+        <Button className="w-[138px]">Update Account</Button>
       </div>
-
     </div>
+  );
+};
 
-  )
-}
-
-export default Account
+export default Account;
