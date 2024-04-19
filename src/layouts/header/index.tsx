@@ -9,8 +9,8 @@ const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
 
-    const isAnonymous = false; // Burada kullanıcı durumunu kontrol etmelisiniz
-    const isUser = true; // Burada kullanıcı durumunu kontrol etmelisiniz
+    const isAnonymous = false; // Burada kullanıcı durumunu kontrol etmeli
+    const isUser = true; // Burada kullanıcı durumunu kontrol etmeli
 
     const handleSignInClick = (): void => {
         setIsPopupOpen(true);
@@ -74,6 +74,8 @@ const Header: React.FC = () => {
                                 to="/photos">Fotoğraflar</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                                 to="/bookmarks">Kaynaklar</Link>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/posts">Yazılar</Link>
                         </>
                     )}
                     {isUser && (
@@ -82,6 +84,8 @@ const Header: React.FC = () => {
                                 to="/users">Kullanıcılar</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                                 to="/settings">Site Ayarları</Link>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/posts">Yazılar</Link>
                             
                         </>
                     )}
@@ -115,6 +119,8 @@ const Header: React.FC = () => {
                                 to="/photos">Fotoğraflar</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/bookmarks">Kaynaklar</Link>
+                                <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/posts">Kaynaklar</Link>
                         </>
                     )}
                     {isUser && (
@@ -123,6 +129,8 @@ const Header: React.FC = () => {
                                 to="/users">Kullanıcılar</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/settings">Site Ayarları</Link>
+                                <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/posts">Yazılar</Link>
                             <button 
                                 className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button"
                                 onClick={() => { /* Çıkış işlemi buraya gelecek */ }}
