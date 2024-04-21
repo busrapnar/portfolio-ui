@@ -10,7 +10,7 @@ const SettingsLayout = (props: Props) => {
   return (
     <main className="max-w-screen-xl min-w-sm mx-auto">
         <Header/>
-        <div className='mt-16 h-screen rounded-lg border p-10 min-w-[835px]'>
+        <div className='mt-16 min-h-screen rounded-lg border p-10 min-w-[835px]'>
             <div className='mb-8'>
                 <div className="space-y-0.5">
                 <h1 className='text-2xl font-bold tracking-tight'>Settings</h1>
@@ -22,7 +22,7 @@ const SettingsLayout = (props: Props) => {
                 <div className='w-[20%]'>
                 <Sidebar/>
                 </div>
-            <div className='w-[60%] h-full'>
+            <div className='w-[70%] h-full'>
             <Outlet/>
             </div>
             

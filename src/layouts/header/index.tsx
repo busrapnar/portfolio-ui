@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IoMenu, IoClose } from "react-icons/io5";
 import Popup from '../../components/Popup';
 import AuthButtons from '../../components/AuthButtons';
+import { MdOutlineManageAccounts } from "react-icons/md";
 
 const Header: React.FC = () => {
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
@@ -44,7 +45,7 @@ const Header: React.FC = () => {
     }, [isPopupOpen, isMenuOpen]);
 
     return (
-        <header className="py-10 border-b-4 border-indigo-500">
+        <header className="py-10 border-b-2 border-indigo-500 border-opacity-20">
             <nav className="flex items-center justify-between text-lg">
                 <div>
                     <Link className="grow flex gap-2 no-underline rounded-full items-center" to="/">
@@ -65,7 +66,7 @@ const Header: React.FC = () => {
                         <IoMenu className='h-12 w-12'/>
                     </button>
                 </div>
-                <div className={`lg:flex items-center justify-center gap-12 hidden`}>
+                <div className={`lg:flex items-center justify-center gap-5 hidden relative`}>
                     {!isUser && (
                         <>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
@@ -80,16 +81,26 @@ const Header: React.FC = () => {
                     )}
                     {isUser && (
                         <>
+                        <div className='flex items-center gap-12'>
+
+                           <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/videos">Eğitimler</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/users">Kullanıcılar</Link>
+                                to="/photos">Fotoğraflar</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/settings">Site Ayarları</Link>
-                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                to="/bookmarks">Kaynaklar</Link>
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                                 to="/posts">Yazılar</Link>
-                            
+                               
+                            <Link className="flex items-center gap-1 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold opacity-60 hover:opacity-100 hover:text-white shadow-sm hover:bg-indigo-600 "
+                                to="/settings"><MdOutlineManageAccounts className='w-6 h-6'/>Yönetim</Link>
+                             </div>
                         </>
                     )}
-                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
+                    <div >
+                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>  
+                    </div>
+                    
                 </div>
             </nav>
             {isPopupOpen && (
@@ -120,33 +131,27 @@ const Header: React.FC = () => {
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/bookmarks">Kaynaklar</Link>
                                 <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/posts">Kaynaklar</Link>
+                                to="/posts">Yazılar</Link>
                         </>
                     )}
                     {isUser && (
                         <>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/users">Kullanıcılar</Link>
+                                to="/videos">Eğitimler</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/settings">Site Ayarları</Link>
+                                to="/photos">Fotoğraflar</Link>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/bookmarks">Kaynaklar</Link>
                                 <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/posts">Yazılar</Link>
-                            <button 
-                                className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button"
-                                onClick={() => { /* Çıkış işlemi buraya gelecek */ }}
-                            >
-                                Çıkış Yap
-                            </button>
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                                to="/settings">Yönetim</Link>
+                            
                         </>
                     )}
-                    {isAnonymous && (
-                        <button 
-                            className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white sign-in-button"
-                            onClick={handleSignInClick}
-                        >
-                            Sign In
-                        </button>
-                    )}
+                    <div className='mx-4'>
+                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
+                    </div>
                 </div>
             </div>
         </header>

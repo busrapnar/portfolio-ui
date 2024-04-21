@@ -106,13 +106,7 @@ export const columns: ColumnDef<Payment>[] = [
       <div className="capitalize">{row.getValue("name")}</div>
     ),
   },
-  {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
-    ),
-  },
+  
   {
     accessorKey: "email",
     header: ({ column }) => {
@@ -130,31 +124,20 @@ export const columns: ColumnDef<Payment>[] = [
   },
   
   {
-    id: "actions",
-    enableHiding: false,
+    id: "delete",
     cell: ({ row }) => {
-      const payment = row.original;
+      return (
+        <Button variant={"destructive"}>Sil</Button>
+      );
+    },
+  },
+  {
+    id: "update",
+    cell: ({ row }) => {
+      
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Button variant={"outline"} >Güncelle</Button>
       );
     },
   },
@@ -188,8 +171,10 @@ const Users = (props: Props) => {
     },
   });
   return (
-    <div className="mt-10">
-      <div className="flex items-center py-4">
+    <div className="flex flex-col gap-4 ">
+      <h3 className="text-lg font-medium">Users</h3>
+      <p className="text-sm text-muted-foreground">Customize the users of the app.</p>
+      <div className="flex items-center py-2 gap-2">
         <Input
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
@@ -198,32 +183,8 @@ const Users = (props: Props) => {
           }
           className="max-w-sm"
         />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        
+        
       </div>
       <div className="rounded-md border">
         <Table>
