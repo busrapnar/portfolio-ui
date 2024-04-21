@@ -5,7 +5,7 @@ import {Outlet} from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <main className="max-w-screen-xl min-w-sm mx-auto">
+    <main className="max-w-screen-xl min-w-[750px] mx-auto">
         <Header/>
         <div className='min-h-screen'>
         <Outlet/>

@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     }, [isPopupOpen, isMenuOpen]);
 
     return (
-        <header className="py-10 border-b-2 border-indigo-500 border-opacity-20">
+        <header className="min-w-[500px] py-10 border-b-2 border-indigo-500 border-opacity-20">
             <nav className="flex items-center justify-between text-lg">
                 <div>
                     <Link className="grow flex gap-2 no-underline rounded-full items-center" to="/">
