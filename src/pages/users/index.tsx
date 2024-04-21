@@ -11,19 +11,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown} from "lucide-react";
 
 import { Button } from "../../components/ui/button";
 import { Checkbox } from "../../components/ui/checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu";
 import { Input } from "../../components/ui/input";
 import {
   Table,
@@ -38,31 +29,31 @@ type Props = {};
 
 const data: Payment[] = [
   {
-    id: "m5gr84i9",
+    id: "1",
     name: "mustafa",
     status: "success",
     email: "ken99@yahoo.com",
   },
   {
-    id: "3u1reuv4",
+    id: "2",
     name: "ayşe",
     status: "success",
     email: "Abe45@gmail.com",
   },
   {
-    id: "derv1ws0",
+    id: "3",
     name: "elif",
     status: "processing",
     email: "Monserrat44@gmail.com",
   },
   {
-    id: "5kma53ae",
+    id: "4",
     name: "sema",
     status: "success",
     email: "Silas22@gmail.com",
   },
   {
-    id: "bhqecj4p",
+    id: "5",
     name: "selim",
     status: "failed",
     email: "carmella@hotmail.com",
@@ -122,28 +113,19 @@ export const columns: ColumnDef<Payment>[] = [
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
-  
-  {
-    id: "delete",
-    cell: ({ row }) => {
-      return (
-        <Button variant={"destructive"}>Sil</Button>
-      );
-    },
-  },
-  {
-    id: "update",
-    cell: ({ row }) => {
-      
-
-      return (
-        <Button variant={"outline"} >Güncelle</Button>
-      );
-    },
-  },
 ];
 
 const Users = (props: Props) => {
+  const handleDelete = (id: string) => {
+    
+    console.log(`delete user with id: ${id}`);
+  };
+  
+  const handleUpdate = (id: string) => {
+    
+    console.log(`Updating user with id: ${id}`);
+    
+  };
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -172,8 +154,6 @@ const Users = (props: Props) => {
   });
   return (
     <div className="flex flex-col gap-4 ">
-      <h3 className="text-lg font-medium">Users</h3>
-      <p className="text-sm text-muted-foreground">Customize the users of the app.</p>
       <div className="flex items-center py-2 gap-2">
         <Input
           placeholder="Filter emails..."
@@ -207,21 +187,23 @@ const Users = (props: Props) => {
             ))}
           </TableHeader>
           <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
+          {table.getRowModel().rows?.length ? (
+            table.getRowModel().rows.map((row) => (
+              <TableRow className="" key={row.id} data-state={row.getIsSelected() && "selected"}>
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+                <div className="flex mt-2 gap-4 ">
+                  <Button variant={"destructive"} onClick={() => handleDelete(row.original.id)}>
+                    Sil
+                  </Button>
+                  <Button variant={"outline"} onClick={() => handleUpdate(row.original.id)}>
+                    Güncelle
+                  </Button>
+                </div>
+              </TableRow>
               ))
             ) : (
               <TableRow>
@@ -231,8 +213,10 @@ const Users = (props: Props) => {
                 >
                   No results.
                 </TableCell>
+                
               </TableRow>
             )}
+
           </TableBody>
         </Table>
       </div>
