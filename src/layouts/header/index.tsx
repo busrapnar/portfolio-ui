@@ -5,6 +5,7 @@ import Popup from '../../components/Popup';
 import AuthButtons from '../../components/AuthButtons';
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
+import Avatar from '../../components/Avatar';
 
 const Header: React.FC = () => {
     const {t} = useTranslation()
@@ -49,15 +50,7 @@ const Header: React.FC = () => {
     return (
         <header className="min-w-[500px] py-10 border-b-2 border-indigo-500 border-opacity-20">
             <nav className="flex items-center justify-between text-lg">
-                <div>
-                    <Link className="grow flex gap-2 no-underline rounded-full items-center" to="/">
-                        <img src="./images/logo.jpeg" alt="" className="w-16 h-16 rounded-full" />
-                        <div className="flex flex-col">
-                            <h1 className="text-xl">Mustafa ÜNLÜ</h1>
-                            <span className="text-xl opacity-60">Product Designer</span>
-                        </div>
-                    </Link>
-                </div>
+                <Avatar name='Mustafa ÜNLÜ' role='Product Designer' imageSrc='./images/logo.jpeg'/>
                 <div className="flex items-center gap-4 lg:hidden">
                     <button 
                         className="hamburger" 
