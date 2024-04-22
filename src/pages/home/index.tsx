@@ -8,8 +8,8 @@ import HelperBox from "../../components/HelperBox";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-20">
-      <Card className="mt-10 px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">
+    <div className="flex flex-col gap-20 mt-20">
+      <Card className=" px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">
         <CardDescription className="text-xl">
           Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi paylaştığım
           bir sayfama hoş geldiniz!
