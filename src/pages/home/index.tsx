@@ -1,4 +1,3 @@
-import Box from "../../components/HelperBox";
 import SocialMedia from "../../components/SocialMedia";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 
