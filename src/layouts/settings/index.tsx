@@ -3,13 +3,15 @@ import Header from '../header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../footer';
 import Sidebar from './sidebar';
+import { useTranslation } from 'react-i18next';
 
 type Props = {};
 
 const SettingsLayout = (props: Props) => {
-  const [pageTitle, setPageTitle] = useState('Settings');
+  const {t, i18n} = useTranslation()
+  const [pageTitle, setPageTitle] = useState(`${t('settings')}`);
   const [pageDescription, setPageDescription] = useState(
-    'Manage your account settings and set e-mail preferences'
+    `${t('settingsDesc')}`
   );
 
   const handlePageChange = (title: string, description: string) => {

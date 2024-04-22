@@ -5,7 +5,7 @@ import Bookmarks from "../pages/bookmarks";
 import Posts from "../pages/posts";
 import Videos from "../pages/videos";
 import Photos from "../pages/photos";
-import Users from "../pages/users";
+import Users from "../pages/settings/users";
 import Settings from "../pages/settings";
 import SettingsLayout from "../layouts/settings";
 import Post from "../pages/settings/post";

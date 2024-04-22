@@ -4,8 +4,10 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import Popup from '../../components/Popup';
 import AuthButtons from '../../components/AuthButtons';
 import { MdOutlineManageAccounts } from "react-icons/md";
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
+    const {t} = useTranslation()
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
@@ -70,13 +72,13 @@ const Header: React.FC = () => {
                     {!isUser && (
                         <>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/videos">Eğitimler</Link>
+                                to="/videos">{t('videos')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/photos">Fotoğraflar</Link>
+                                to="/photos">{t('photos')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/bookmarks">Kaynaklar</Link>
+                                to="/bookmarks">{t('bookmarks')}</Link>
                                 <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/posts">Yazılar</Link>
+                                to="/posts">{t('posts')}</Link>
                         </>
                     )}
                     {isUser && (
@@ -84,16 +86,16 @@ const Header: React.FC = () => {
                         <div className='flex items-center gap-12'>
 
                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/videos">Eğitimler</Link>
+                                to="/videos">{t('videos')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/photos">Fotoğraflar</Link>
+                                to="/photos">{t('photos')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/bookmarks">Kaynaklar</Link>
+                                to="/bookmarks">{t('bookmarks')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/posts">Yazılar</Link>
+                                to="/posts">{t('posts')}</Link>
                                
                             <Link className="flex items-center gap-1 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold opacity-60 hover:opacity-100 hover:text-white shadow-sm hover:bg-indigo-600 "
-                                to="/settings"><MdOutlineManageAccounts className='w-6 h-6'/>Yönetim</Link>
+                                to="/settings"><MdOutlineManageAccounts className='w-6 h-6'/>{t('management')}</Link>
                              </div>
                         </>
                     )}
@@ -125,27 +127,27 @@ const Header: React.FC = () => {
                     {!isUser && (
                         <>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/videos">Eğitimler</Link>
+                                to="/videos">{t('videos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/photos">Fotoğraflar</Link>
+                                to="/photos">{t('photos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/bookmarks">Kaynaklar</Link>
+                                to="/bookmarks">{t('bookmarks')}</Link>
                                 <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/posts">Yazılar</Link>
+                                to="/posts">{t('posts')}</Link>
                         </>
                     )}
                     {isUser && (
                         <>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/videos">Eğitimler</Link>
+                                to="/videos">{t('videos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/photos">Fotoğraflar</Link>
+                                to="/photos">{t('photos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/bookmarks">Kaynaklar</Link>
+                                to="/bookmarks">{t('bookmarks')}</Link>
                                 <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/posts">Yazılar</Link>
+                                to="/posts">{t('posts')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-                                to="/settings">Yönetim</Link>
+                                to="/settings">{t('management')}</Link>
                             
                         </>
                     )}

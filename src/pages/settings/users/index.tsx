@@ -13,9 +13,9 @@ import {
 } from "@tanstack/react-table";
 import { ArrowUpDown} from "lucide-react";
 
-import { Button } from "../../components/ui/button";
-import { Checkbox } from "../../components/ui/checkbox";
-import { Input } from "../../components/ui/input";
+import { Button } from "../../../components/ui/button";
+import { Checkbox } from "../../../components/ui/checkbox";
+import { Input } from "../../../components/ui/input";
 import {
   Table,
   TableBody,
@@ -23,7 +23,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table";
+} from "../../../components/ui/table";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
@@ -116,6 +117,7 @@ export const columns: ColumnDef<Payment>[] = [
 ];
 
 const Users = (props: Props) => {
+  const {t} = useTranslation();
   const handleDelete = (id: string) => {
     
     console.log(`delete user with id: ${id}`);
@@ -197,10 +199,10 @@ const Users = (props: Props) => {
                 ))}
                 <div className="flex mt-2 gap-4 ">
                   <Button variant={"destructive"} onClick={() => handleDelete(row.original.id)}>
-                    Sil
+                    {t('delete')}
                   </Button>
                   <Button variant={"outline"} onClick={() => handleUpdate(row.original.id)}>
-                    Güncelle
+                    {t('update')}
                   </Button>
                 </div>
               </TableRow>

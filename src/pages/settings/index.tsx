@@ -14,18 +14,9 @@ import {
   FormMessage,
 } from "../../components/ui/form";
 import { Button } from "../../components/ui/button";
-import React, { useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "../../components/ui/select";
+import { useState } from "react";
 import { Skeleton } from "../../components/ui/skeleton";
-
+import { useTranslation } from "react-i18next";
 type Props = {};
 
 const FormSchema = z.object({
@@ -44,6 +35,10 @@ const FormSchema = z.object({
 });
 
 const Settings = (props: Props) => {
+  const {t, i18n} = useTranslation()
+  const clickHandle = async lang => {
+    await i18n.changeLanguage(lang)
+  }
   const [urls, setUrls] = useState([""]);
 
   const handleAddUrl = () => {
@@ -83,13 +78,12 @@ const Settings = (props: Props) => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>{t('title')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="title" {...field} />
+                    <Input placeholder={t('title')} {...field} />
                   </FormControl>
                   <FormDescription>
-                    This is your public display name. It can be your real name
-                    or a pseudonym. You can only change this once every 30 days.
+                  {t('titleDesc')}
                   </FormDescription>
                 </FormItem>
               )}
@@ -104,17 +98,16 @@ const Settings = (props: Props) => {
             name="metaKeyword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Meta Keyword</FormLabel>
+                <FormLabel>{t('metaKey')}</FormLabel>
                 <FormControl>
                   <Input
                     type="metaKeyword"
-                    placeholder="Meta Keyword"
+                    placeholder={t('metaKey')}
                     {...field}
                   />
                 </FormControl>
                 <FormDescription>
-                  You can manage verified metaKeyword addresses in your
-                  metaKeyword settings.
+                {t('metaKeyDesc')}
                 </FormDescription>
               </FormItem>
             )}
@@ -124,10 +117,10 @@ const Settings = (props: Props) => {
         {/* Meta Description */}
         <Form {...form}>
           <FormItem>
-            <FormLabel>Meta Description</FormLabel>
+            <FormLabel>{t('meta')}</FormLabel>
             <Textarea placeholder="Type your message here."></Textarea>
             <FormDescription>
-              You can @mention other users and organizations to link to them.
+            {t('metaDesc')}
             </FormDescription>
           </FormItem>
         </Form>
@@ -142,7 +135,7 @@ const Settings = (props: Props) => {
                 <FormItem>
                   <FormLabel>URL {index + 1}</FormLabel>
                   <FormDescription>
-                    Add links to your website, blog, or social media profiles.
+                   {t('urlDesc')}
                   </FormDescription>
                   <FormControl>
                     <div className="flex gap-4">
@@ -163,7 +156,7 @@ const Settings = (props: Props) => {
             onClick={handleAddUrl}
             className="w-[130px]"
           >
-            Add URL
+            {t('addUrl')}
           </Button>
         </Form>
 
@@ -174,18 +167,18 @@ const Settings = (props: Props) => {
             name="language"
             render={({ field }) => (
               <FormItem className="flex flex-col gap-1 mt-2">
-                <FormLabel>Language</FormLabel>
-                <FormDescription>Select Language</FormDescription>
+                <FormLabel>{t('language')}</FormLabel>
+                <FormDescription>{t('selectlng')}</FormDescription>
                 <div className="flex gap-4">
                   <div className="flex flex-col items-center gap-1 bg-primary-foreground">
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} onClick={()=> clickHandle('en')}>
                   <img className="w-12 h-8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwN0E11tIN7wL2W3XWdyX-Y1PFvCjyfPSnwdr8sEkbRA3oio6Lft7SZlVxEoQ_vwXUoE&usqp=CAU" alt="" />
                 </Button>
                 <FormDescription>English</FormDescription>
                   </div>
                 
                 <div className="flex flex-col items-center gap-1 bg-primary-foreground">
-                <Button variant={"ghost"}>
+                <Button variant={"ghost"} onClick={()=> clickHandle('tr')}>
                   <img className="w-12 h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg/200px-Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg.png" alt="" />
                 </Button>
                 <FormDescription>Türkçe</FormDescription>
@@ -194,7 +187,7 @@ const Settings = (props: Props) => {
                 </div>
                 
                 <FormDescription>
-                  This is the language that will be used in the dashboard.
+                  {t("lngDesc")}
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -204,7 +197,7 @@ const Settings = (props: Props) => {
 
         {/* Theme */}
         <div className="grid gap-4 mt-8">
-          <p className="text-sm font-medium leading-none">Theme</p>
+          <p className="text-sm font-medium leading-none">{t('theme')}</p>
           <div className="grid max-w-md grid-cols-2 gap-4">
             {/* Light Theme */}
             <div className="grid gap-2">
@@ -266,7 +259,7 @@ const Settings = (props: Props) => {
           </div>
         </div>
 
-        <Button className="w-[164px]">Update preferences</Button>
+        <Button className="w-[164px]">{t('uptadePref')}</Button>
       </div>
     </div>
   );

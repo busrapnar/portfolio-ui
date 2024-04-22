@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
 type Props = {
@@ -7,20 +8,20 @@ type Props = {
 
 const Sidebar = ({ onPageChange }: Props) => {
   const location = useLocation();
-
+  const {t, i18n} = useTranslation()
   useEffect(() => {
     switch (location.pathname) {
       case '/settings':
-        onPageChange('Ayarlar', 'Manage your account settings and set e-mail preferences');
+        onPageChange(`${t('settings')}`, `${t('settingDesc')}`);
         break;
       case '/settings/post':
-        onPageChange('Yazılar', 'Manage your posts settings');
+        onPageChange(`${t('posts')}`, `${t('postDesc')}`);
         break;
       case '/settings/users':
-        onPageChange('Kullanıcılar', 'Manage users settings');
+        onPageChange(`${t('users')}`, `${t('usersDesc')}`);
         break;
       default:
-        onPageChange('Settings', 'Manage your account settings and set e-mail preferences');
+        onPageChange(`${t('settings')}`, `${t('settingsDesc')}`);
     }
   }, [location.pathname, onPageChange]);
 
@@ -31,19 +32,19 @@ const Sidebar = ({ onPageChange }: Props) => {
           to="/settings"
           className='flex items-center rounded-md font-medium transition-colors hover:text-accent-foreground h-10 focus:bg-muted hover:underline px-4'
         >
-          Ayarlar
+          {t('settings')}
         </Link>
         <Link
           to="/settings/post"
           className='flex items-center rounded-md font-medium transition-colors hover:text-accent-foreground h-9 focus:bg-muted hover:underline px-4'
         >
-          Yazılar
+          {t('posts')}
         </Link>
         <Link
           to="/settings/users"
           className='flex items-center rounded-md font-medium transition-colors hover:text-accent-foreground h-9 focus:bg-muted hover:underline px-4'
         >
-          Kullanıcılar
+          {t('users')}
         </Link>
       </div>
     </div>
