@@ -1,71 +1,74 @@
-import React from "react";
-import Box from "../../components/Box";
-import Banner from "../../components/Banner";
+import Box from "../../components/HelperBox";
 import SocialMedia from "../../components/SocialMedia";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
-import Description from "../../components/Description";
+
 import Sponsor from "../../components/Sponsor";
+import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import HelperBox from "../../components/HelperBox";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <div className="flex flex-col gap-20">
-      <div className="mt-10 px-6 py-10 border border-gray-300 bg-white opacity-75 rounded-lg">
-            <p className="text-xl">
-                Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi
-                paylaştığım bir sayfama hoş geldiniz!
-                <br/>
-                Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma
-                tekniklerini ve dil becerilerini geliştirme yollarını
-                keşfedebilirsiniz. <br/>
-                Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. <br/>
-                Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil
-                topluluğuna katılmaya <b>hazır mısınız? 🌍💬</b>
-            </p>
-        </div>
-      <div className="mt-16">
-            <h3 className="font-bold text-3xl">Kendine değer kat!</h3>
-            <p className="font-normal text-base font-montserrat mt-5">
-                İyi bir kariyer için, doğru bir başlangıç gerekir. Prototürk'de bir çok dil ve teknolojiye ait derslerle
-                doğru bir
-                başlangıç yapmaya hazırsın!
-            </p>
-        </div>
+      <Card className="mt-10 px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">
+        <CardDescription className="text-xl">
+          Merhaba dostlar! Dil öğrenmeye olan tutkumu ve keşiflerimi paylaştığım
+          bir sayfama hoş geldiniz!
+          <br />
+          Burada dil öğrenme sürecimde edindiğim ipuçlarını, pratik yapma
+          tekniklerini ve dil becerilerini geliştirme yollarını
+          keşfedebilirsiniz. <br />
+          Ayrıca, dil öğrenme yolculuğumun videolarını da bulacaksınız. <br />
+          Benimle birlikte İngilizceyi öğrenmeye ve dünya çapında dil
+          topluluğuna katılmaya <b>hazır mısınız? 🌍💬</b>
+        </CardDescription>
+      </Card>
+      <div className="mt-16 flex flex-col gap-4">
+        <CardTitle className="font-bold text-3xl">Kendine değer kat!</CardTitle>
+        <CardDescription className="font-normal text-base font-montserrat">
+          İyi bir kariyer için, doğru bir başlangıç gerekir. Prototürk'de bir
+          çok dil ve teknolojiye ait derslerle doğru bir başlangıç yapmaya
+          hazırsın!
+        </CardDescription>
+      </div>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
-        <Box
+        <HelperBox
           title="Gramer"
           description="Bilmediğim bir konuyu anlamak istiyorum"
           imageSrc="./images/book.png"
         />
-        <Box
+        <HelperBox
           title="Kelime"
           description="Yeni kelimeler ve kalıplar öğrenmek istiyorum."
           imageSrc="./images/gears.png"
         />
-        <Box
+        <HelperBox
           title="Telaffuz"
           description="İyi konuşmak ve duyduğumu rahat anlamak istiyorum"
           imageSrc="./images/communication.png"
         />
       </div>
       <div>
-      <div className="mt-16">
-            <h3 className="font-bold text-3xl">Katkılarla daha güçlüyüz!</h3>
-            <p className="font-normal text-base font-montserrat mt-5">
-                Kesintisiz İngilizce öğrenme yolculuğumuz için, doğru bir başlangıç şarttır. Ben de bu kesintisiz
-                yolculuğumuzda sizlere öğrendiğim her şeyi aktarmak istiyorum ve sponsor olmak isterseniz, hazırım!
-            </p>
+        <div className="mt-16 flex flex-col gap-4">
+          <CardTitle className="font-bold text-3xl">
+            Katkılarla daha güçlüyüz!
+          </CardTitle>
+          <CardDescription className="font-normal text-base font-montserrat">
+            Kesintisiz İngilizce öğrenme yolculuğumuz için, doğru bir başlangıç
+            şarttır. Ben de bu kesintisiz yolculuğumuzda sizlere öğrendiğim her
+            şeyi aktarmak istiyorum ve sponsor olmak isterseniz, hazırım!
+          </CardDescription>
         </div>
-        <Sponsor/>
+        <Sponsor names={["Onurhan", "Abdullah", "Ahmet"]} />
       </div>
-      <div className="mt-16">
-            <h3 className="font-bold text-3xl">Yenilikleri birlikte takip edelim!</h3>
-            <p className="font-normal text-base font-montserrat  mt-5">
-                Öğrendiğim şeylerle ilgili hazırladığım son içeriklerden anında haberdar olmak için sosyal
-                medya hesabımı takip etmeyi unutma!
-            </p>
-        </div>
+      <div className="mt-16 flex flex-col gap-4">
+        <CardTitle className="font-bold text-3xl">
+          Yenilikleri birlikte takip edelim!
+        </CardTitle>
+        <CardDescription className="font-normal text-base font-montserrat">
+          Öğrendiğim şeylerle ilgili hazırladığım son içeriklerden anında
+          haberdar olmak için sosyal medya hesabımı takip etmeyi unutma!
+        </CardDescription>
+      </div>
       <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
         <SocialMedia
           iconName={FaInstagram}

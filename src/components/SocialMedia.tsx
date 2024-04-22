@@ -1,6 +1,8 @@
 import React from 'react';
 import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
+import { FormDescription } from './ui/form';
 
 type Props = {
     iconName: IconType;
@@ -26,13 +28,14 @@ const SocialMedia = ({
             </div>
             <h1 className="text-lg text-white font-semibold text-center">{title}</h1>
             <p className="text-white opacity-70 text-center">{description}</p>
+            <Button variant={"outline"} asChild>
             <Link 
                 to={path}
-                className="bg-white px-4 py-2 rounded-lg text-lg opacity-90 hover:text-white hover:bg-opacity-20"
                 target="_blank"
             >
                 Takip et
             </Link>
+            </Button>
         </div>
     )
 }

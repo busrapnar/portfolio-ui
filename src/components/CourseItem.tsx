@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox } from './ui/checkbox';
+import { Badge } from './ui/badge';
 
 interface CourseItemProps {
     title: string;
@@ -20,7 +21,7 @@ const CourseItem: React.FC<CourseItemProps> = ({ title, href, videoCount }) => {
             <h5 className="grow font-medium">
                 <a href={href}>{title}</a>
             </h5>
-            <span className="shrink-0 whitespace-nowrap rounded bg-zinc-100 px-2 py-0.5 text-sm text-zinc-500">{videoCount}</span>
+            <Badge variant="secondary">{videoCount}</Badge>
         </article>
     );
 };

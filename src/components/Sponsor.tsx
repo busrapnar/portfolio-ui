@@ -1,18 +1,22 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  names: string[];
+};
 
-const Sponsor = (props: Props) => {
+const Sponsor = ({ names }: Props) => {
   return (
     <div>
       <div className="flex mt-16 items-center gap-6 px-6 py-5 rounded-xl no-underline bg-amber-100 text-amber-900 ">
         <div className="grow">
           <p className="font-semibold">Bu ay kahve ısmarlayanlar;</p>
           <p className="flex flex-wrap gap-2 opacity-60">
-            <span>
-              Onurhan<span>,</span>
-            </span>
-            <span>Abdullah</span>
+            {names.map((name, index) => (
+              <span key={index}>
+                {name}
+                {index !== names.length - 1 && <span>,</span>}
+              </span>
+            ))}
           </p>
         </div>
         <a

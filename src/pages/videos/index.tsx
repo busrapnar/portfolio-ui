@@ -1,13 +1,10 @@
-import React from "react";
 import Description from "../../components/Description";
 import InformationCard from "../../components/InformationCard";
 import Sponsor from "../../components/Sponsor";
 import Headers from "../../components/Headers";
 import CourseItem from "../../components/CourseItem";
 
-type Props = {};
-
-const Videos = (props: Props) => {
+const Videos = () => {
   return (
     <div className="mt-20">
         <Description content="Frontend ve Tasarım alanında ürettiğim eğitim videolarının tam
@@ -18,7 +15,7 @@ const Videos = (props: Props) => {
           <InformationCard title="ABONE" informationPath="" information="31 B"/>
           <InformationCard title="IZLENME" informationPath="" information="1,3 Mn"/>
           </div>
-          <Sponsor />
+          <Sponsor names={['Onurhan', 'Abdullah', 'Ahmet']} />
           <div>
           <Headers header="Frontend 101"/>
 

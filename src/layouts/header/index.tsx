@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                 <div className="flex flex-col gap-4 justify-center items-end text-xl">
                     {!isUser && (
                         <>
-                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white "
                                 to="/videos">{t('videos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/photos">{t('photos')}</Link>
@@ -131,7 +131,7 @@ const Header: React.FC = () => {
                     )}
                     {isUser && (
                         <>
-                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white "
                                 to="/videos">{t('videos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/photos">{t('photos')}</Link>

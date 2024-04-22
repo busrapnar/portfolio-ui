@@ -259,7 +259,7 @@ const Settings = (props: Props) => {
           </div>
         </div>
 
-        <Button className="w-[164px]">{t('uptadePref')}</Button>
+        <Button className="w-[164px]">{t('updatePref')}</Button>
       </div>
     </div>
   );

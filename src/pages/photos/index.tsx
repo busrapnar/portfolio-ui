@@ -1,17 +1,17 @@
-import React from "react";
-import Description from "../../components/Description";
 import PhotosCard from "../../components/PhotosCard";
 import InformationCard from "../../components/InformationCard";
+import { Card, CardDescription } from "../../components/ui/card";
 
-type Props = {};
 
 const Photos = () => {
   return (
     <div className="mt-20">
-      <Description
-        content="Fotoğraf çekmek etrafımdaki şeyleri daha iyi görmemi sağlıyor.
-        Çevrem hakkında farkındalığı, detayları görebilmemi ve doğru anı yakalayabilmeyi öğretiyor."
-      />
+      <Card className="mt-10 px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">
+      <CardDescription className="text-xl">
+      Fotoğraf çekmek etrafımdaki şeyleri daha iyi görmemi sağlıyor.<br />
+        Çevrem hakkında farkındalığı, detayları görebilmemi ve doğru anı yakalayabilmeyi öğretiyor
+      </CardDescription>
+      </Card>
 
       <div className="mt-20 grid grid-cols-2 gap-4 sm:gap-6">
         <InformationCard
