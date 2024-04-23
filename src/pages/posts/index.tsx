@@ -1,10 +1,7 @@
-import React from "react";
 import PostItem from "../../components/PostItem";
 import { Card, CardDescription, CardTitle } from "../../components/ui/card";
 
-type Props = {};
-
-const Posts = (props: Props) => {
+const Posts = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
       <Card className="px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">

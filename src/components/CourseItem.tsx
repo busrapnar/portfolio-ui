@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Checkbox } from './ui/checkbox';
 import { Badge } from './ui/badge';
 
@@ -9,11 +9,6 @@ interface CourseItemProps {
 }
 
 const CourseItem: React.FC<CourseItemProps> = ({ title, href, videoCount }) => {
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
 
     return (
         <article className="group flex items-start gap-3 px-2 py-4 transition border-b border-b-zinc-200 hover:bg-white">

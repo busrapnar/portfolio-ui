@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, MouseEvent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMenu, IoClose } from "react-icons/io5";
 import Popup from '../../components/Popup';
@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import Avatar from '../../components/Avatar';
 
 const Header: React.FC = () => {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const popupRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
         }
-
+    
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -70,32 +70,32 @@ const Header: React.FC = () => {
                                 to="/photos">{t('photos')}</Link>
                             <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                                 to="/bookmarks">{t('bookmarks')}</Link>
-                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
                                 to="/posts">{t('posts')}</Link>
                         </>
                     )}
                     {isUser && (
                         <>
-                        <div className='flex items-center gap-12'>
-
-                           <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/videos">{t('videos')}</Link>
-                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/photos">{t('photos')}</Link>
-                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/bookmarks">{t('bookmarks')}</Link>
-                            <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
-                                to="/posts">{t('posts')}</Link>
-                               
-                            <Link className="flex items-center gap-1 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold opacity-60 hover:opacity-100 hover:text-white shadow-sm hover:bg-indigo-600 "
-                                to="/settings"><MdOutlineManageAccounts className='w-6 h-6'/>{t('management')}</Link>
-                             </div>
+                            <div className='flex items-center gap-12'>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                    to="/videos">{t('videos')}</Link>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                    to="/photos">{t('photos')}</Link>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                    to="/bookmarks">{t('bookmarks')}</Link>
+                                <Link className="grow no-underline hover:opacity-100 hover:text-blue-500 opacity-60"
+                                    to="/posts">{t('posts')}</Link>
+                                <Link className="flex items-center gap-1 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold opacity-60 hover:opacity-100 hover:text-white shadow-sm hover:bg-indigo-600 "
+                                    to="/settings">
+                                    <MdOutlineManageAccounts className='w-6 h-6'/>
+                                    {t('management')}
+                                </Link>
+                            </div>
                         </>
                     )}
-                    <div >
-                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>  
+                    <div>
+                        <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>  
                     </div>
-                    
                 </div>
             </nav>
             {isPopupOpen && (
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
                                 to="/photos">{t('photos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/bookmarks">{t('bookmarks')}</Link>
-                                <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/posts">{t('posts')}</Link>
                         </>
                     )}
@@ -137,15 +137,14 @@ const Header: React.FC = () => {
                                 to="/photos">{t('photos')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/bookmarks">{t('bookmarks')}</Link>
-                                <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+                            <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/posts">{t('posts')}</Link>
                             <Link className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
                                 to="/settings">{t('management')}</Link>
-                            
                         </>
                     )}
                     <div className='mx-4'>
-                    <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
+                        <AuthButtons isAnonymous={isAnonymous} isUser={isUser} onSignInClick={handleSignInClick}/>
                     </div>
                 </div>
             </div>

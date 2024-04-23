@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../footer';
 import Sidebar from './sidebar';
 import { useTranslation } from 'react-i18next';
 
-type Props = {};
 
-const SettingsLayout = (props: Props) => {
-  const {t, i18n} = useTranslation()
+
+const SettingsLayout = () => {
+  const {t} = useTranslation()
   const [pageTitle, setPageTitle] = useState(`${t('settings')}`);
   const [pageDescription, setPageDescription] = useState(
     `${t('settingsDesc')}`

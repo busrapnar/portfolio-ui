@@ -26,7 +26,6 @@ import {
 } from "../../../components/ui/table";
 import { useTranslation } from "react-i18next";
 
-type Props = {};
 
 const data: Payment[] = [
   {
@@ -116,7 +115,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-const Users = (props: Props) => {
+const Users = () => {
   const {t} = useTranslation();
   const handleDelete = (id: string) => {
     

@@ -1,12 +1,10 @@
-import React from "react";
 import InformationCard from "../../components/InformationCard";
 import Sponsor from "../../components/Sponsor";
 import { Card, CardDescription } from "../../components/ui/card";
 import BookmarksPost from "../../components/BookmarksPost";
 
-type Props = {};
 
-const Bookmarks = (props: Props) => {
+const Bookmarks = () => {
   return (
     <div className="flex flex-col gap-10 mt-20">
       <Card className="px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">

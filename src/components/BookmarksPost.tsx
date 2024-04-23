@@ -1,5 +1,3 @@
-import React from "react";
-
 type PostProps = {
   title: string;
   description?: string;

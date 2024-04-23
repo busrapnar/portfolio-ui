@@ -17,7 +17,6 @@ import { Button } from "../../components/ui/button";
 import { useState } from "react";
 import { Skeleton } from "../../components/ui/skeleton";
 import { useTranslation } from "react-i18next";
-type Props = {};
 
 const FormSchema = z.object({
   title: z.string().min(2, {
@@ -34,11 +33,12 @@ const FormSchema = z.object({
   }),
 });
 
-const Settings = (props: Props) => {
-  const {t, i18n} = useTranslation()
-  const clickHandle = async lang => {
-    await i18n.changeLanguage(lang)
-  }
+const Settings = () => {
+  const { t, i18n } = useTranslation();
+
+  const clickHandle = async (lang: string) => {
+    await i18n.changeLanguage(lang);
+  };
   const [urls, setUrls] = useState([""]);
 
   const handleAddUrl = () => {
@@ -131,7 +131,7 @@ const Settings = (props: Props) => {
             <FormField
               key={index}
               name={`link-${index}`}
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>URL {index + 1}</FormLabel>
                   <FormDescription>
@@ -162,38 +162,38 @@ const Settings = (props: Props) => {
 
         {/* Language */}
         <Form {...form}>
-          <FormField
-            control={form.control}
-            name="language"
-            render={({ field }) => (
-              <FormItem className="flex flex-col gap-1 mt-2">
-                <FormLabel>{t('language')}</FormLabel>
-                <FormDescription>{t('selectlng')}</FormDescription>
-                <div className="flex gap-4">
-                  <div className="flex flex-col items-center gap-1 bg-primary-foreground">
-                  <Button variant={"ghost"} onClick={()=> clickHandle('en')}>
-                  <img className="w-12 h-8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwN0E11tIN7wL2W3XWdyX-Y1PFvCjyfPSnwdr8sEkbRA3oio6Lft7SZlVxEoQ_vwXUoE&usqp=CAU" alt="" />
-                </Button>
-                <FormDescription>English</FormDescription>
-                  </div>
-                
+        <FormField
+          control={form.control}
+          name="language"
+          render={() => (
+            <FormItem className="flex flex-col gap-1 mt-2">
+              <FormLabel>{t('language')}</FormLabel>
+              <FormDescription>{t('selectlng')}</FormDescription>
+              <div className="flex gap-4">
                 <div className="flex flex-col items-center gap-1 bg-primary-foreground">
-                <Button variant={"ghost"} onClick={()=> clickHandle('tr')}>
-                  <img className="w-12 h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg/200px-Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg.png" alt="" />
-                </Button>
-                <FormDescription>Türkçe</FormDescription>
+                  <Button variant={"ghost"} onClick={() => clickHandle('en')}>
+                    <img className="w-12 h-8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwN0E11tIN7wL2W3XWdyX-Y1PFvCjyfPSnwdr8sEkbRA3oio6Lft7SZlVxEoQ_vwXUoE&usqp=CAU" alt="" />
+                  </Button>
+                  <FormDescription>English</FormDescription>
                 </div>
-                
+
+                <div className="flex flex-col items-center gap-1 bg-primary-foreground">
+                  <Button variant={"ghost"} onClick={() => clickHandle('tr')}>
+                    <img className="w-12 h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg/200px-Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg.png" alt="" />
+                  </Button>
+                  <FormDescription>Türkçe</FormDescription>
                 </div>
-                
-                <FormDescription>
-                  {t("lngDesc")}
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </Form>
+              </div>
+
+              <FormDescription>
+                {t("lngDesc")}
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </Form>
+
 
         {/* Theme */}
         <div className="grid gap-4 mt-8">

@@ -1,8 +1,6 @@
-import React from 'react';
 import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { FormDescription } from './ui/form';
 
 type Props = {
     iconName: IconType;

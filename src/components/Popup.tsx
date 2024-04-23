@@ -1,8 +1,6 @@
 import { FaGithub, FaGoogle } from 'react-icons/fa6'
 
-type Props = {}
-
-const Popup = (props: Props) => {
+const Popup = () => {
   return (
     <div
         className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white opacity-1 shadow-lg p-6 rounded-lg z-20">
