@@ -17,6 +17,7 @@ import { Button } from "../../components/ui/button";
 import { useState } from "react";
 import { Skeleton } from "../../components/ui/skeleton";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../../components/theme-provider";
 
 const FormSchema = z.object({
   title: z.string().min(2, {
@@ -35,7 +36,7 @@ const FormSchema = z.object({
 
 const Settings = () => {
   const { t, i18n } = useTranslation();
-
+  const { setTheme } = useTheme()
   const clickHandle = async (lang: string) => {
     await i18n.changeLanguage(lang);
   };
@@ -202,6 +203,7 @@ const Settings = () => {
             {/* Light Theme */}
             <div className="grid gap-2">
               {/* Theme Preview */}
+              
               <div className="flex flex-col gap-1 rounded-md border-2 border-muted p-1 hover:border-accent">
               <div className="space-y-2 rounded-sm bg-[#ecedef] p-2">
                   <div className="flex flex-col gap-2 rounded-md bg-white p-2 shadow-sm">
@@ -226,7 +228,9 @@ const Settings = () => {
                   </div>
                 </div>
               </div>
+              <Button variant={"secondary"} onClick={() => setTheme("light")}>
               <p className="text-muted-foreground text-sm text-center">Light</p>
+              </Button>
             </div>
 
             {/* Dark Theme */}
@@ -254,7 +258,9 @@ const Settings = () => {
                   </div>
                 </div>
               </div>
+              <Button onClick={() => setTheme("dark")}>
               <p className="text-muted-foreground text-sm text-center">Dark</p>
+              </Button>
             </div>
           </div>
         </div>

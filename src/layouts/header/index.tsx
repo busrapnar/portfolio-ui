@@ -48,7 +48,7 @@ const Header: React.FC = () => {
     }, [isPopupOpen, isMenuOpen]);
 
     return (
-        <header className="min-w-[500px] py-10 border-b-2 border-indigo-500 border-opacity-20">
+        <header className="py-10 border-b-2 border-indigo-500 border-opacity-20">
             <nav className="flex items-center justify-between text-lg">
                 <Avatar name='Mustafa ÜNLÜ' role='Product Designer' imageSrc='./images/logo.jpeg'/>
                 <div className="flex items-center gap-4 lg:hidden">
