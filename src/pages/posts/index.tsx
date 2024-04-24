@@ -4,7 +4,7 @@ import { Card, CardDescription, CardTitle } from "../../components/ui/card";
 const Posts = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
-      <Card className="px-6 py-10 border border-gray-300 bg-white opacity-80 rounded-lg">
+      <Card className=" px-6 py-10 border border-gray-300 opacity-80 rounded-lg">
         <CardDescription className="text-xl">
           Frontend ve Tasarım alanında ürettiğim eğitim videolarının tam
           listesi.

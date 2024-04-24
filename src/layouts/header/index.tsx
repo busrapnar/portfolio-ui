@@ -106,7 +106,7 @@ const Header: React.FC = () => {
                 </div>
             )}
             {/* Hamburger Menu */}
-            <div className={`${isMenuOpen ? 'fixed' : 'hidden'} lg:hidden top-0 right-0 bg-white h-full w-64 shadow-lg z-10`}>
+            <div className={`${isMenuOpen ? 'fixed' : 'hidden'} lg:hidden top-0 right-0 bg-white dark:bg-gray-800 h-full w-64 shadow-lg z-10`}>
                 <div className="flex justify-end items-center px-4 py-2">
                     <button 
                         aria-label="Close Menu" 
