@@ -26,7 +26,7 @@ const Home = () => {
             yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
             çok vakit ayırabilirsiniz. 
           </div>
-          <div className="md:flex grid grid-cols-3 gap-10 items-center justify-center">
+          <div className="md:flex grid grid-cols-3 gap-4 md:gap-10 items-center justify-center">
           <StackBox title="React" iconName={FaReact} />
           <StackBox title="Golang" iconName={FaGolang} />
           <StackBox title="MongoDB" iconName={SiMongodb} />
