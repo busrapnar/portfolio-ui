@@ -6,10 +6,11 @@ import Avatar from "../../components/Avatar";
 import NavLink from "../../components/NavLink";
 
 const Header: React.FC = () => {
-  const { t } = useTranslation();
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const popupRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  
 
   const closePopup = (): void => {
     setIsPopupOpen(false);
@@ -38,7 +39,7 @@ const Header: React.FC = () => {
   }, [isPopupOpen, isMenuOpen]);
 
   return (
-    <header className="py-5">
+    <header className="py-5 max-w-screen-xl mx-auto">
       <nav className="flex items-center justify-between text-lg">
         <Avatar
           name="Mustafa ÜNLÜ"
@@ -62,6 +63,8 @@ const Header: React.FC = () => {
           <NavLink to="/projects">{t("project")}</NavLink>
           <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
           <NavLink to="/posts">{t("posts")}</NavLink>
+          
+          
         </div>
       </nav>
       {/* Hamburger Menu */}

@@ -22,7 +22,8 @@ module.exports = {
       },
       fontFamily: {
         montserrat : ["Montserrat", "sans-serif"],
-        poppins : ["Poppins", "sans-serif"]
+        poppins : ["Poppins", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"]
       },
       colors: {
         border: "hsl(var(--border))",

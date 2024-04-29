@@ -28,6 +28,10 @@ const Photos = () => {
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-10">
         <ProductCard/>
         <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import SocialMedia from "../../components/SocialMedia";
-import { FaInstagram, FaTiktok, FaYoutube,} from "react-icons/fa6";
+import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
 import { FaRegComments,FaRegCalendarAlt} from "react-icons/fa";
-import Sponsor from "../../components/Sponsor";
 import { CardDescription, CardTitle } from "../../components/ui/card";
 import HelperBox from "../../components/HelperBox";
 import { SlEnergy } from "react-icons/sl";
@@ -14,7 +13,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
         <div className="py-10 flex gap-10">
-          <div className="text-xl md:w-2/3 w-full leading-relaxed text-start ">
+          <div className="text-xl lg:w-2/3 w-full leading-relaxed text-start ">
             Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
             yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
             çok vakit ayırabilirsiniz. Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
@@ -74,19 +73,6 @@ const Home = () => {
           Ready"
         />
       </div>
-      <div>
-        <div className="mt-16 flex flex-col gap-4">
-          <CardTitle className="font-bold text-3xl">
-            Katkılarla daha güçlüyüz!
-          </CardTitle>
-          <CardDescription className="font-normal text-base font-montserrat">
-            Kesintisiz İngilizce öğrenme yolculuğumuz için, doğru bir başlangıç
-            şarttır. Ben de bu kesintisiz yolculuğumuzda sizlere öğrendiğim her
-            şeyi aktarmak istiyorum ve sponsor olmak isterseniz, hazırım!
-          </CardDescription>
-        </div>
-        <Sponsor names={["Onurhan", "Abdullah", "Ahmet"]} />
-      </div>
       <div className="mt-16 flex flex-col gap-4">
         <CardTitle className="font-bold text-3xl">
           Yenilikleri birlikte takip edelim!
@@ -96,28 +82,20 @@ const Home = () => {
           haberdar olmak için sosyal medya hesabımı takip etmeyi unutma!
         </CardDescription>
       </div>
-      <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-3 ">
+      <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-2 ">
         <SocialMedia
-          iconName={FaInstagram}
+          iconName={FaGooglePlay}
           title="Instagram'da @birdilingilizce hesabını takip etmeyi unutma!"
           description="İngilizce ile ilgili ipucu ve kolay kullanımları paylaştığımız instagram hesabını takip etmeyi unutmayın."
-          addClass="bg-gradient-to-l from-indigo-700 via-purple-700 to-pink-500"
+          addClass="bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]"
           path="https://instagram.com/birdilingilizce"
         />
         <SocialMedia
-          iconName={FaTiktok}
+          iconName={FaAppStore}
           title="Tiktok'ta @birdilingilizce hesabını takip etmeyi unutma!"
           description="İngilizce ile ilgili ipucu ve kolay kullanımları paylaştığımız instagram hesabını takip etmeyi unutmayın."
           addClass="bg-black"
           path="https://tiktok.com/birdilingilizce"
-        />
-
-        <SocialMedia
-          iconName={FaYoutube}
-          title="Youtube'da @birdilingilizce hesabını takip etmeyi unutma!"
-          description="İngilizce ile ilgili ipucu ve kolay kullanımları paylaştığımız instagram hesabını takip etmeyi unutmayın."
-          addClass="bg-[#FF0000]"
-          path="https://youtube.com/birdilingilizce"
         />
       </div>
     </div>
