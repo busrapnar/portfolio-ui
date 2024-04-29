@@ -4,7 +4,7 @@ import Home from "../pages/home";
 import Bookmarks from "../pages/bookmarks";
 import Posts from "../pages/posts";
 import Videos from "../pages/videos";
-import Photos from "../pages/photos";
+import Photos from "../pages/projects";
 export default function Router(){
     return(
         <BrowserRouter>
@@ -12,7 +12,7 @@ export default function Router(){
             <Route element={<Layout/>} >
                 <Route path="/" element={<Home/>}/>
                 <Route path="/bookmarks" element={<Bookmarks/>} />
-                <Route path="/photos" element={<Photos/>} />
+                <Route path="/projects" element={<Photos/>} />
                 <Route path="/videos" element={<Videos/>} />
                 <Route path="/posts" element={<Posts/>} />
                 <Route />

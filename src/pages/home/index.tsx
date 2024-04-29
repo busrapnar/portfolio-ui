@@ -1,10 +1,9 @@
 import SocialMedia from "../../components/SocialMedia";
-import { FaInstagram, FaTiktok, FaYoutube, FaGolang } from "react-icons/fa6";
-import { FaRegComments, FaReact, FaRegCalendarAlt, FaHtml5, FaCss3 } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaYoutube,} from "react-icons/fa6";
+import { FaRegComments,FaRegCalendarAlt} from "react-icons/fa";
 import Sponsor from "../../components/Sponsor";
 import { CardDescription, CardTitle } from "../../components/ui/card";
 import HelperBox from "../../components/HelperBox";
-import { SiMongodb } from "react-icons/si";
 import { SlEnergy } from "react-icons/sl";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { RxUpdate } from "react-icons/rx";
@@ -14,8 +13,8 @@ import StackBox from "../../components/StackBox";
 const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
-        <div className="py-10 flex flex-col gap-10">
-          <div className="text-xl leading-relaxed md:text-justify text-center">
+        <div className="py-10 flex gap-10">
+          <div className="text-xl md:w-2/3 w-full leading-relaxed text-start ">
             Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
             yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
             çok vakit ayırabilirsiniz. Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
@@ -25,15 +24,10 @@ const Home = () => {
             yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
             çok vakit ayırabilirsiniz. 
           </div>
-          <div className="md:flex grid grid-cols-3 gap-4 md:gap-10 items-center justify-center">
-          <StackBox title="React" iconName={FaReact} />
-          <StackBox title="Golang" iconName={FaGolang} />
-          <StackBox title="MongoDB" iconName={SiMongodb} />
-          <StackBox title="React" iconName={FaReact} />
-          <StackBox title="HTML" iconName={FaHtml5} />
-          <StackBox title="CSS" iconName={FaCss3} />
-
-        </div>
+          <div className="w-1/3 h-full hidden lg:block xl:block">
+          <StackBox/>
+          </div>
+          
         </div>
         
      

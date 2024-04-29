@@ -10,11 +10,11 @@ interface AvatarProps {
 const Avatar: React.FC<AvatarProps> = ({ name, role, imageSrc }) => {
     return (
         <div>
-            <Link className="grow flex gap-2 no-underline rounded-full items-center" to="/">
+            <Link className="grow flex gap-2 no-underline items-center" to="/">
                 <img src={imageSrc} alt={name} className="w-16 h-16 rounded-full" />
                 <div className="flex flex-col">
-                    <h1 className="text-xl">{name}</h1>
-                    <span className="text-xl opacity-60">{role}</span>
+                    <h1 className="text-base">{name}</h1>
+                    <span className="text-lg opacity-60">{role}</span>
                 </div>
             </Link>
         </div>

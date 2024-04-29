@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      zIndex: {
+        '100': '100',
+      },
       fontFamily: {
         montserrat : ["Montserrat", "sans-serif"],
         poppins : ["Poppins", "sans-serif"]
