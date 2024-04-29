@@ -9,9 +9,11 @@ const Layout = () => {
       <div className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur '>
         <Header />
       </div>
- 
-        <Outlet />
+      <div className='min-h-screen'>
+      <Outlet />
 
+      </div>
+      
       <Footer />
     
       

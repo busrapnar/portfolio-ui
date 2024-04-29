@@ -6,7 +6,7 @@ import { Card, CardDescription } from "../../components/ui/card";
 const Photos = () => {
   return (
     <div className="mt-20">
-      <Card className="px-6 py-10 border border-gray-300 opacity-80 rounded-lg">
+      <Card className="px-6 py-10 ">
       <CardDescription className="text-xl">
       Fotoğraf çekmek etrafımdaki şeyleri daha iyi görmemi sağlıyor.<br />
         Çevrem hakkında farkındalığı, detayları görebilmemi ve doğru anı yakalayabilmeyi öğretiyor

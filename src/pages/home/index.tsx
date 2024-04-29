@@ -14,8 +14,7 @@ import StackBox from "../../components/StackBox";
 const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
-      
-        <div className="py-10 opacity-80 flex flex-col gap-10">
+        <div className="py-10 flex flex-col gap-10">
           <div className="text-xl leading-relaxed md:text-justify text-center">
             Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
             yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
