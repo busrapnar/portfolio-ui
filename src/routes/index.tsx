@@ -5,11 +5,6 @@ import Bookmarks from "../pages/bookmarks";
 import Posts from "../pages/posts";
 import Videos from "../pages/videos";
 import Photos from "../pages/photos";
-import Users from "../pages/settings/users";
-import Settings from "../pages/settings";
-import SettingsLayout from "../layouts/settings";
-import Post from "../pages/settings/post";
-
 export default function Router(){
     return(
         <BrowserRouter>
@@ -20,14 +15,7 @@ export default function Router(){
                 <Route path="/photos" element={<Photos/>} />
                 <Route path="/videos" element={<Videos/>} />
                 <Route path="/posts" element={<Posts/>} />
-                
                 <Route />
-            </Route>
-            <Route element={<SettingsLayout/>}>
-                <Route path="/settings" element={<Settings/>} />
-                <Route path="/settings/users" element={<Users/>}/>
-                <Route path="/settings/post"  element={<Post></Post>}/>
-                
             </Route>
         </Routes>
         </BrowserRouter>

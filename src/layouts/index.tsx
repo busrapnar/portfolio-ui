@@ -1,17 +1,23 @@
-import Header from './header'
-import Footer from './footer'
-import {Outlet} from 'react-router-dom'
+import React from 'react';
+import Header from './header';
+import Footer from './footer';
+import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <main className="max-w-screen-xl mx-auto md:px-2 bg-background">
-        <Header/>
-        <div className='min-h-screen'>
-        <Outlet/>
-        </div>
-        <Footer/>
-    </main>
-  )
-}
+    <main className="relative max-w-screen-xl bg-background mx-auto">
+      <div className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur '>
+        <Header />
+      </div>
+ 
+        <Outlet />
 
-export default Layout
+      <Footer />
+    
+      
+      </main>
+      
+  );
+};
+
+export default Layout;
