@@ -1,5 +1,5 @@
 import PostItem from "../../components/PostItem";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import { CardTitle } from "../../components/ui/card";
 
 const Posts = () => {
   return (
