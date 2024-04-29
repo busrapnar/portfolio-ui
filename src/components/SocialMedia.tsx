@@ -31,7 +31,7 @@ const SocialMedia = ({
                 to={path}
                 target="_blank"
             >
-                Takip et
+                Keşfet
             </Link>
             </Button>
         </div>

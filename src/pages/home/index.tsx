@@ -85,17 +85,17 @@ const Home = () => {
       <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-2 ">
         <SocialMedia
           iconName={FaGooglePlay}
-          title="Instagram'da @birdilingilizce hesabını takip etmeyi unutma!"
-          description="İngilizce ile ilgili ipucu ve kolay kullanımları paylaştığımız instagram hesabını takip etmeyi unutmayın."
+          title="Google Play'de Uygulamalarımızı İncele"
+          description="Uygulamalarımızı incelemek için projeler sayfasınnı ziyaret edebilir, Google Play'den uygulamalarımzı indirebilirsiniz"
           addClass="bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]"
-          path="https://instagram.com/birdilingilizce"
+          path="/projects"
         />
         <SocialMedia
           iconName={FaAppStore}
-          title="Tiktok'ta @birdilingilizce hesabını takip etmeyi unutma!"
-          description="İngilizce ile ilgili ipucu ve kolay kullanımları paylaştığımız instagram hesabını takip etmeyi unutmayın."
-          addClass="bg-black"
-          path="https://tiktok.com/birdilingilizce"
+          title="App Store'da Uygulamalarımızı İncele"
+          description="Uygulamalarımızı incelemek için projeler sayfasınnı ziyaret edebilir, App Store'dan uygulamalarımzı indirebilirsiniz"
+          addClass="bg-gradient-to-l from-[#0470b9] via-[#057d93] to-[#035a95]"
+          path="/projects"
         />
       </div>
     </div>
