@@ -53,7 +53,7 @@
 
   @layer base {
     * {
-      @apply border-border font-outfit;
+      @apply border-border font-poppins;
     }
     body {
       @apply bg-background text-foreground;
