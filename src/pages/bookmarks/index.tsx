@@ -1,21 +1,20 @@
 import InformationCard from "../../components/InformationCard";
 import Sponsor from "../../components/Sponsor";
-import { Card, CardDescription } from "../../components/ui/card";
 import BookmarksPost from "../../components/BookmarksPost";
 
 
 const Bookmarks = () => {
   return (
     <div className="flex flex-col gap-10 mt-20">
-      <Card className=" px-6 py-10 border border-gray-300 opacity-80 rounded-lg">
-        <CardDescription className="text-xl">
+      <div className=" px-6 py-10 border border-gray-300 rounded-lg">
+        <p className="text-xl text-opacity-80">
           Frontend ve Tasarım alanında ürettiğim eğitim videolarının tam
           listesi.
           <br />
           Youtube üzerinden izledikten sonra buradan işaretleyebilir ve düzenli
           olarak takip edebilirsiniz.
-        </CardDescription>
-      </Card>
+        </p>
+      </div>
       <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
         <InformationCard
           information="221 B"

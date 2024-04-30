@@ -5,9 +5,8 @@ import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <main className='bg-[#101415]'>
-    
     <div className="relative ">
-      <div className='sticky top-0 z-50 w-full border-b border-border/40 bg-[#101415]/95 backdrop-blur supports-[backdrop-filter]:bg-[#101415]/60'>
+      <div className='sticky lg:top-0 lg:z-50 w-full border-b border-border/40 lg:bg-[#101415]/95 lg:backdrop-blur lg:supports-[backdrop-filter]:bg-[#101415]/60'>
         <Header />
       </div>
       <div className='min-h-screen max-w-screen-xl mx-auto'>

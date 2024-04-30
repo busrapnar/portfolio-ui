@@ -7,28 +7,22 @@ import NavLink from "../../components/NavLink";
 import { LanguageToggle } from "../../components/LanguageToggle";
 
 const Header: React.FC = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const popupRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-  
-
-  const closePopup = (): void => {
-    setIsPopupOpen(false);
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
-      closePopup();
-    }
-  };
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false);
+    }
+  };
+
   useEffect(() => {
-    if (isPopupOpen || isMenuOpen) {
+    if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -37,11 +31,11 @@ const Header: React.FC = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isPopupOpen, isMenuOpen]);
+  }, [isMenuOpen]);
 
   return (
-    <header className="py-5 max-w-screen-xl mx-auto">
-      <nav className="flex items-center justify-between text-lg">
+    <header className="relative py-5 max-w-screen-xl mx-auto">
+      <nav className="flex items-center justify-between text-lg ">
         <Avatar
           name="Mustafa ÜNLÜ"
           role="Software Developer"
@@ -57,20 +51,16 @@ const Header: React.FC = () => {
             <IoMenu className="h-12 w-12" />
           </button>
         </div>
-        <div
-          className={`lg:flex items-center justify-center gap-5 hidden relative`}
-        >
-          
+        <div className={`lg:flex items-center justify-center gap-5 hidden relative`} ref={menuRef}>
           <NavLink to="/projects">{t("project")}</NavLink>
-          <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
           <NavLink to="/posts">{t("posts")}</NavLink>
+          <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
           <LanguageToggle/>
-          
         </div>
       </nav>
       {/* Hamburger Menu */}
       {isMenuOpen && (
-        <div className="fixed lg:hidden top-0 right-0 h-full w-64 shadow-lg ">
+        <div className="fixed lg:hidden bg-black top-0 right-0 h-full w-64 z-100" ref={menuRef}>
           <div className="flex justify-end items-center px-4 py-2">
             <button
               aria-label="Close Menu"
@@ -80,8 +70,7 @@ const Header: React.FC = () => {
               <IoClose className="w-6 h-6" />
             </button>
           </div>
-          <div className="flex flex-col gap-4 justify-center items-end text-xl">
-            
+          <div className="flex flex-col gap-4 justify-center items-end text-xl z-50">
             <Link
               className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
               to="/projects"
@@ -90,21 +79,23 @@ const Header: React.FC = () => {
             </Link>
             <Link
               className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
-              to="/bookmarks"
-            >
-              {t("bookmarks")}
-            </Link>
-            <Link
-              className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
               to="/posts"
             >
               {t("posts")}
             </Link>
+            <Link
+              className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
+              to="/bookmarks"
+            >
+              {t("bookmarks")}
+            </Link>
+            <div className="block py-2 px-4 mx-4">
+              <LanguageToggle/>
+            </div>
           </div>
         </div>
       )}
     </header>
   );
 };
-
 export default Header;

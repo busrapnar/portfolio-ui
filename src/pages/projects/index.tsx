@@ -1,9 +1,9 @@
 import { Card, CardDescription } from "../../components/ui/card";
 import ProductCard from "../../components/ProductCard";
 
-const Photos = () => {
+const Projects = () => {
   return (
-    <div className="mt-20 z-10">
+    <div className="mt-20 ">
       <Card className="px-6 py-10 ">
         <CardDescription className="text-xl">
           Kullanıcıların günlük yaşamlarını kolaylaştıran pratik özellikler
@@ -61,4 +61,4 @@ const Photos = () => {
   );
 };
 
-export default Photos;
+export default Projects;

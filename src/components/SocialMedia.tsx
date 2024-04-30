@@ -24,7 +24,7 @@ const SocialMedia = ({
                 <Icon size={48} />
             </div>
             <h1 className="text-lg text-white font-semibold text-center">{title}</h1>
-            <p className="text-white opacity-70 text-center">{description}</p>
+            <p className="text-white text-opacity-80 text-center">{description}</p>
             
             <Link 
                 to={path}
