@@ -60,7 +60,7 @@ const Header: React.FC = () => {
       </nav>
       {/* Hamburger Menu */}
       {isMenuOpen && (
-        <div className="fixed lg:hidden bg-black top-0 right-0 h-full w-64 z-100" ref={menuRef}>
+        <div className="fixed lg:hidden bg-background top-0 right-0 h-full w-64 z-100" ref={menuRef}>
           <div className="flex justify-end items-center px-4 py-2">
             <button
               aria-label="Close Menu"
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
             >
               {t("bookmarks")}
             </Link>
-            <div className="block py-2 px-4 mx-4">
+            <div className="py-2 px-4 mx-6">
               <LanguageToggle/>
             </div>
           </div>

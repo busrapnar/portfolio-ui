@@ -4,7 +4,6 @@ type PostProps = {
   link: string;
   domain: string;
   date: string;
-  clapCount: number;
 };
 
 const BookmarksPost = ({

@@ -10,6 +10,7 @@ import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
 import { PiHandHeartThin } from "react-icons/pi";
 import { CiPlay1 } from "react-icons/ci";
 import { IoIosCloudOutline } from "react-icons/io";
+import { MdOutlineCloud } from "react-icons/md";
 
 
 const Home = () => {
@@ -57,7 +58,7 @@ const Home = () => {
           
         />
         <HelperBox
-          iconName={IoIosCloudOutline}
+          iconName={MdOutlineCloud}
           title="CI/CD Updates on Cloud"
         />
         <HelperBox

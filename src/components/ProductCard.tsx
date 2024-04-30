@@ -12,8 +12,8 @@ const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
   
 
   return (
-    <div className="flex flex-col bg-accent/15">
-      <div className="relative flex md:flex-row rounded-xl shadow-lg p-3 mx-auto border border-border">
+    <div className="flex flex-col bg-accent/20">
+      <div className="flex md:flex-row rounded-xl shadow-lg p-3 mx-auto border border-border">
         <div className="w-1/3 h-full rounded-lg grid">
           <img src={imageUrl} className="rounded-xl w-full h-full" />
         </div>
@@ -25,7 +25,7 @@ const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
             ))}
           </div>
           <p className="md:text-lg text-gray-500 text-base">{description}</p>
-          <Link to={path} className='border border-indigo-500/40 hover:bg-indigo-500/40 rounded-sm px-4 py-2 w-32 text-center'>Görüntüle</Link>
+          <Link to={path} className='border border-indigo-500 hover:bg-indigo-500 rounded-sm px-4 py-2 w-32 text-center'>Görüntüle</Link>
         </div>
       </div>
     </div>
