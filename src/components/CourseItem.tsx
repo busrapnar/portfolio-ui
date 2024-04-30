@@ -11,12 +11,12 @@ interface CourseItemProps {
 const CourseItem: React.FC<CourseItemProps> = ({ title, href, videoCount }) => {
 
     return (
-        <article className="group flex items-start gap-3 px-2 py-4 transition border-b border-b-zinc-200 hover:bg-white">
+        <article className="group flex items-start gap-3 px-2 py-4 transition border-b  hover:bg-accent">
             <Checkbox/>
             <h5 className="grow font-medium">
                 <a href={href}>{title}</a>
             </h5>
-            <Badge variant="secondary">{videoCount}</Badge>
+            <Badge variant="outline" className='border-blue-800'>{videoCount}</Badge>
         </article>
     );
 };

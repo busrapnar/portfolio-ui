@@ -23,7 +23,7 @@ const Posts = () => {
         date="15 Nisan 2023"
         readTime="2 min read"
         views="500"
-        link="/#"
+        link="/posts/post-detail"
       />
       <PostItem
         title="Uyku ve Rızık"

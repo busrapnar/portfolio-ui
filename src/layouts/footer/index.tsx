@@ -45,9 +45,9 @@ const Footer = () => {
           <FaGithub className="w-6 h-6" />
         </Link>
 
-        <button className="rounded-full" onClick={() => clickHandle(currentLanguage === "tr" ? "en" : "tr")}>
+        <button className="flex items-center rounded-full bg-zinc-200 p-3 text-zinc-600 no-underline transition-colors hover:bg-blue-600 hover:text-white " onClick={() => clickHandle(currentLanguage === "tr" ? "en" : "tr")}>
           <img
-            className="w-10 h-10 rounded-full"
+            className="w-6 h-6 rounded-full"
             src={currentLanguage === "tr" ?"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwN0E11tIN7wL2W3XWdyX-Y1PFvCjyfPSnwdr8sEkbRA3oio6Lft7SZlVxEoQ_vwXUoE&usqp=CAU": "https://www.olkando.com/wp-content/uploads/2024/02/yuvarlak-turk-bayragi-tc-bayrak.png"}
             alt="language toggle"
           />

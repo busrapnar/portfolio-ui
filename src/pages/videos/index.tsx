@@ -1,6 +1,5 @@
 
 import InformationCard from "../../components/InformationCard";
-import Sponsor from "../../components/Sponsor";
 import Headers from "../../components/Headers";
 import CourseItem from "../../components/CourseItem";
 import { Card, CardDescription } from "../../components/ui/card";
@@ -21,7 +20,6 @@ const Videos = () => {
           <InformationCard title="ABONE" informationPath="" information="31 B"/>
           <InformationCard title="IZLENME" informationPath="" information="1,3 Mn"/>
           </div>
-          <Sponsor names={['Onurhan', 'Abdullah', 'Ahmet']} />
           <div>
           <Headers header="Frontend 101"/>
 

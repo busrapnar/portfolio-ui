@@ -8,26 +8,27 @@ import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { RxUpdate } from "react-icons/rx";
 import { TbTestPipe } from "react-icons/tb";
 import StackBox from "../../components/StackBox";
+import { PiHandHeartThin } from "react-icons/pi";
 
 const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
-        <div className="py-10 flex gap-10">
-          <div className="text-xl lg:w-2/3 w-full leading-relaxed text-start ">
-            Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
-            yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
-            çok vakit ayırabilirsiniz. Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
-            yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
-            çok vakit ayırabilirsiniz. 
-            Uygulama ve servis hizmetlerimizdeki odak noktamız, ihtiyaçlara
-            yönelik çözümler sunmaktır. Sizler, işlerinizi büyütmeye daha
-            çok vakit ayırabilirsiniz. 
+      <div className="flex flex-col gap-2">
+        <h1 className="text-4xl font-bold tracking-wide">Biz Kimiz?</h1>
+      <div className="flex gap-10">
+          <div className="flex flex-col items-start gap-4 xl:w-2/3 w-full">
+            <p className="text-lg leading-loose text-start text-muted-foreground ">
+            Geleneksel ve çağın gerisinde kalmış ajanslardan sıkıldınız mı? Sizi ekibimizle tanıştıralım. <b className="border-b-4 border-indigo-500 text-white">Ankara</b>'da kurulmuş ve tam zamanlı olarak <b className="border-b-4 border-indigo-500 text-white">backend</b> ve <b className="border-b-4 border-indigo-500 text-white">front-end</b> alanlarında freelance hizmet sağlayan bir ekibiz. Eğer siz de hala aradığınız ekibi bulamadıysanız, doğru yerdesiniz!
+            </p>
+            <button className="flex items-center gap-2 border-4 border-indigo-500 px-4 py-2"><span className="text-lg">Tanışalım</span> <PiHandHeartThin size={24} className="text-indigo-500"/></button>
           </div>
-          <div className="w-1/3 h-full hidden lg:block xl:block">
+          <div className="w-1/3 h-full hidden xl:block">
           <StackBox/>
           </div>
           
         </div>
+      </div>
+        
         
      
       <div className="mt-16 flex flex-col gap-4">
