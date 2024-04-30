@@ -20,7 +20,7 @@ export function LanguageToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size={"icon"}>
-          <MdLanguage className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all hover:-rotate-90 hover:scale-80 opacity-60" />
+          <MdLanguage className="h-[1.2rem] w-[1.2rem]  opacity-60" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -28,7 +28,7 @@ export function LanguageToggle() {
           <div className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwN0E11tIN7wL2W3XWdyX-Y1PFvCjyfPSnwdr8sEkbRA3oio6Lft7SZlVxEoQ_vwXUoE&usqp=CAU"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
               alt=""
             />
             <span>English</span>
@@ -38,7 +38,7 @@ export function LanguageToggle() {
           <div className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg/200px-Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/240px-Flag_of_Turkey.svg.png"
               alt=""
             />
             <span>Türkçe</span>
