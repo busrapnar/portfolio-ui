@@ -1,5 +1,3 @@
-import InformationCard from "../../components/InformationCard";
-import Sponsor from "../../components/Sponsor";
 import BookmarksPost from "../../components/BookmarksPost";
 
 
