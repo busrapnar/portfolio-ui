@@ -6,7 +6,7 @@ import BookmarksPost from "../../components/BookmarksPost";
 const Bookmarks = () => {
   return (
     <div className="flex flex-col gap-10 mt-20">
-      <div className=" px-6 py-10 border border-gray-300 rounded-lg">
+      <div className=" px-6 py-10 border border-gray-300/50 rounded-lg">
         <p className="text-xl text-opacity-80">
           Frontend ve Tasarım alanında ürettiğim eğitim videolarının tam
           listesi.
@@ -15,19 +15,6 @@ const Bookmarks = () => {
           olarak takip edebilirsiniz.
         </p>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
-        <InformationCard
-          information="221 B"
-          informationPath="https://unsplash.com/@birdilingilizce"
-          title="GÖRÜNTÜLEME"
-        />
-        <InformationCard
-          information="1 B"
-          informationPath="https://unsplash.com/@birdilingilizce"
-          title="INDIRME"
-        />
-      </div>
-      <Sponsor names={["Onurhan", "Abdullah", "Ahmet"]} />
       <div className="mt-10">
         <h3 className="text-3xl opacity-50">Son Eklenenler</h3>
         <div className="mt-5">
