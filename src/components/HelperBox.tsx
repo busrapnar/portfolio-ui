@@ -9,7 +9,7 @@ type Props = {
 const HelperBox = ({ title,iconName: Icon , addClass }: Props) => {
     const additionalClass = addClass ? ` ${addClass}` : '';
     return (
-        <div className={`flex flex-col items-center justify-center py-8 gap-8 hover:bg-accent border px-24 ${additionalClass}`}>
+        <div className={`flex flex-col items-center justify-center py-8 gap-8 hover:bg-accent hover:border-indigo-500/50 border px-24 ${additionalClass}`}>
             <Icon size={48} className="" />
             <h1 className="text-xl font-bold text-center">{title}</h1>
             

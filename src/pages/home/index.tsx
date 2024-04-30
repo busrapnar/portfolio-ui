@@ -1,14 +1,15 @@
 import SocialMedia from "../../components/SocialMedia";
 import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
-import { FaRegComments,FaRegCalendarAlt} from "react-icons/fa";
+import { FaRegCalendarAlt} from "react-icons/fa";
 import { CardDescription, CardTitle } from "../../components/ui/card";
 import HelperBox from "../../components/HelperBox";
 import { SlEnergy } from "react-icons/sl";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
-import { RxUpdate } from "react-icons/rx";
 import { TbTestPipe } from "react-icons/tb";
 import StackBox from "../../components/StackBox";
 import { PiHandHeartThin } from "react-icons/pi";
+import { CiCloudOn,CiPlay1 } from "react-icons/ci";
+
 
 const Home = () => {
   return (
@@ -16,9 +17,9 @@ const Home = () => {
       <div className="flex flex-col gap-2">
         <h1 className="text-4xl font-bold tracking-wide">Biz Kimiz?</h1>
       <div className="flex gap-10">
-          <div className="flex flex-col items-start gap-4 xl:w-2/3 w-full">
+          <div className="flex flex-col items-start gap-8 xl:w-2/3 w-full">
             <p className="text-lg leading-loose text-start text-muted-foreground ">
-            Geleneksel ve çağın gerisinde kalmış ajanslardan sıkıldınız mı? Sizi ekibimizle tanıştıralım. <b className="border-b-4 border-indigo-500 text-white">Ankara</b>'da kurulmuş ve tam zamanlı olarak <b className="border-b-4 border-indigo-500 text-white">backend</b> ve <b className="border-b-4 border-indigo-500 text-white">front-end</b> alanlarında freelance hizmet sağlayan bir ekibiz. Eğer siz de hala aradığınız ekibi bulamadıysanız, doğru yerdesiniz!
+            Geleneksel ve çağın gerisinde kalmış ajanslardan sıkıldınız mı? Sizi ekibimizle tanıştıralım. <b className="border-b-4 border-indigo-500 text-white">Ankara</b>'da kurulmuş ve tam zamanlı olarak <b className="border-b-4 border-indigo-500 text-white">mobil</b> alannında <b className="border-b-4 border-indigo-500 text-white">freelance</b> hizmet sağlayan bir ekibiz. Eğer siz de hala aradığınız ekibi bulamadıysanız, doğru yerdesiniz!
             </p>
             <button className="flex items-center gap-2 border-4 border-indigo-500 px-4 py-2"><span className="text-lg">Tanışalım</span> <PiHandHeartThin size={24} className="text-indigo-500"/></button>
           </div>
@@ -34,9 +35,7 @@ const Home = () => {
       <div className="mt-16 flex flex-col gap-4">
         <CardTitle className="font-bold text-3xl">Kendine değer kat!</CardTitle>
         <CardDescription className="font-normal text-base font-montserrat">
-          İyi bir kariyer için, doğru bir başlangıç gerekir. Prototürk'de bir
-          çok dil ve teknolojiye ait derslerle doğru bir başlangıç yapmaya
-          hazırsın!
+        İyi bir uygulama için, doğru bir başlangıç gerekir. Java ve React teknolojisinin gücünü kullanarak yaptığımız uygulamalar ile sizde doğru bir başlangıç yapmaya hazırsınız!
         </CardDescription>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3">
@@ -53,25 +52,21 @@ const Home = () => {
         />
         <HelperBox
           iconName={FaRegCalendarAlt}
-          title="4-Week
-          Turnaround"
+          title="Time Availability"
           
         />
         <HelperBox
-          iconName={RxUpdate}
-          title="Regular Updates 
-          on Slack"
+          iconName={CiCloudOn}
+          title="CI/CD Updates on Cloud"
         />
         <HelperBox
           iconName={TbTestPipe}
-          title="Weekly
-          Test Version"
+          title="Testable code"
           
         />
         <HelperBox
-          iconName={FaRegComments}
-          title="App Store
-          Ready"
+          iconName={CiPlay1}
+          title="The Perfect Beginning"
         />
       </div>
       <div className="mt-16 flex flex-col gap-4">
@@ -79,8 +74,7 @@ const Home = () => {
           Yenilikleri birlikte takip edelim!
         </CardTitle>
         <CardDescription className="font-normal text-base font-montserrat">
-          Öğrendiğim şeylerle ilgili hazırladığım son içeriklerden anında
-          haberdar olmak için sosyal medya hesabımı takip etmeyi unutma!
+        Yayınladığımız uygulamalara göz atabilir ve aklınızda ki uygulama fikirleri için bilgi edinebilirsiniz.
         </CardDescription>
       </div>
       <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-2 ">

@@ -1,6 +1,5 @@
 import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
 
 type Props = {
     iconName: IconType;
@@ -26,14 +25,14 @@ const SocialMedia = ({
             </div>
             <h1 className="text-lg text-white font-semibold text-center">{title}</h1>
             <p className="text-white opacity-70 text-center">{description}</p>
-            <Button variant={"outline"} asChild>
+            
             <Link 
                 to={path}
                 target="_blank"
+                className='px-8 py-1 bg-background rounded-sm'
             >
                 Keşfet
             </Link>
-            </Button>
         </div>
     )
 }

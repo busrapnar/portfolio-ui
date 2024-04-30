@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         <div
           className={`lg:flex items-center justify-center gap-5 hidden relative`}
         >
-          <NavLink to="/videos">{t("videos")}</NavLink>
+          
           <NavLink to="/projects">{t("project")}</NavLink>
           <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
           <NavLink to="/posts">{t("posts")}</NavLink>
@@ -80,12 +80,7 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div className="flex flex-col gap-4 justify-center items-end text-xl">
-            <Link
-              className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white "
-              to="/videos"
-            >
-              {t("videos")}
-            </Link>
+            
             <Link
               className="block py-2 px-4 mx-4 no-underline rounded-lg hover:bg-indigo-500 hover:text-white"
               to="/projects"

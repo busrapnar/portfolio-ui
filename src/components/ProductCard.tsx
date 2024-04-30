@@ -12,11 +12,11 @@ const ProductCard = () => {
 				
 				<h3 className="font-bold md:text-3xl text-xl">Sanal Mağazalar</h3>
                 <div className='flex gap-2'>
-                    <span className='bg-accent px-2 py-1'>#Frontend</span>
-                    <span className='bg-accent px-2 py-1'>#Backend</span>
+                    <span className='bg-accent px-2 py-1'>#React</span>
+                    <span className='bg-accent px-2 py-1'>#Java</span>
                 </div>
 				<p className="md:text-lg text-gray-500 text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error beatae sed, odit necessitatibus explicabo iste delectus excepturi et perspiciatis non veniam optio porro! Sint incidunt expedita vero natus quod.</p>
-				<Link to={"/#"} className='border border-indigo-500/40 rounded-sm px-4 py-2 w-32 text-center'>Görüntüle</Link>
+				<Link to={"/#"} className='border border-indigo-500/40 hover:bg-indigo-500/40 rounded-sm px-4 py-2 w-32 text-center'>Görüntüle</Link>
 			</div>
 		</div>
 	</div>
