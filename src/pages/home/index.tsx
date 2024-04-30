@@ -1,14 +1,15 @@
 import SocialMedia from "../../components/SocialMedia";
-import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
-import { FaRegCalendarAlt} from "react-icons/fa";
 import { CardDescription, CardTitle } from "../../components/ui/card";
+import StackBox from "../../components/StackBox";
 import HelperBox from "../../components/HelperBox";
 import { SlEnergy } from "react-icons/sl";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { TbTestPipe } from "react-icons/tb";
-import StackBox from "../../components/StackBox";
+import { IoCalendarOutline } from "react-icons/io5";
+import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
 import { PiHandHeartThin } from "react-icons/pi";
-import { CiCloudOn,CiPlay1 } from "react-icons/ci";
+import { CiPlay1 } from "react-icons/ci";
+import { IoIosCloudOutline } from "react-icons/io";
 
 
 const Home = () => {
@@ -51,12 +52,12 @@ const Home = () => {
           UI & UX"
         />
         <HelperBox
-          iconName={FaRegCalendarAlt}
+          iconName={IoCalendarOutline}
           title="Time Availability"
           
         />
         <HelperBox
-          iconName={CiCloudOn}
+          iconName={IoIosCloudOutline}
           title="CI/CD Updates on Cloud"
         />
         <HelperBox
@@ -81,14 +82,14 @@ const Home = () => {
         <SocialMedia
           iconName={FaGooglePlay}
           title="Google Play'de Uygulamalarımızı İncele"
-          description="Uygulamalarımızı incelemek için projeler sayfasınnı ziyaret edebilir, Google Play'den uygulamalarımzı indirebilirsiniz"
+          description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, Google Play'den uygulamalarımzı indirebilirsiniz"
           addClass="bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]"
           path="/projects"
         />
         <SocialMedia
           iconName={FaAppStore}
           title="App Store'da Uygulamalarımızı İncele"
-          description="Uygulamalarımızı incelemek için projeler sayfasınnı ziyaret edebilir, App Store'dan uygulamalarımzı indirebilirsiniz"
+          description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, App Store'dan uygulamalarımzı indirebilirsiniz"
           addClass="bg-gradient-to-l from-[#0470b9] via-[#057d93] to-[#035a95]"
           path="/projects"
         />

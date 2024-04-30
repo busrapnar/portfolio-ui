@@ -18,7 +18,7 @@ const SocialMedia = ({
 }: Props) => {
     return (
         <div
-            className={`flex flex-col items-center justify-center text-end ${addClass} h-96 gap-4 rounded-lg px-2`}
+            className={`flex flex-col items-center justify-center text-end ${addClass} h-96 gap-4 rounded-lg px-6`}
         >
             <div className="text-white">
                 <Icon size={48} />
@@ -29,7 +29,7 @@ const SocialMedia = ({
             <Link 
                 to={path}
                 target="_blank"
-                className='px-8 py-1 bg-background rounded-sm'
+                className='px-8 py-3 bg-background rounded-sm'
             >
                 Keşfet
             </Link>

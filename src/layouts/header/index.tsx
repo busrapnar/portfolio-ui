@@ -4,6 +4,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import Avatar from "../../components/Avatar";
 import NavLink from "../../components/NavLink";
+import { LanguageToggle } from "../../components/LanguageToggle";
 
 const Header: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
@@ -63,7 +64,7 @@ const Header: React.FC = () => {
           <NavLink to="/projects">{t("project")}</NavLink>
           <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
           <NavLink to="/posts">{t("posts")}</NavLink>
-          
+          <LanguageToggle/>
           
         </div>
       </nav>
