@@ -1,4 +1,3 @@
-import SocialMedia from "../../components/SocialMedia";
 import { CardDescription, CardTitle } from "../../components/ui/card";
 import StackBox from "../../components/StackBox";
 import HelperBox from "../../components/HelperBox";
@@ -9,8 +8,8 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { FaAppStore, FaGooglePlay} from "react-icons/fa6";
 import { PiHandHeartThin } from "react-icons/pi";
 import { CiPlay1 } from "react-icons/ci";
-import { IoIosCloudOutline } from "react-icons/io";
 import { MdOutlineCloud } from "react-icons/md";
+import AppPlatform from "../../components/AppPlatform";
 
 
 const Home = () => {
@@ -80,14 +79,14 @@ const Home = () => {
         </CardDescription>
       </div>
       <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-2 ">
-        <SocialMedia
+        <AppPlatform
           iconName={FaGooglePlay}
           title="Google Play'de Uygulamalarımızı İncele"
           description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, Google Play'den uygulamalarımzı indirebilirsiniz"
           addClass="bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]"
           path="/projects"
         />
-        <SocialMedia
+        <AppPlatform
           iconName={FaAppStore}
           title="App Store'da Uygulamalarımızı İncele"
           description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, App Store'dan uygulamalarımzı indirebilirsiniz"

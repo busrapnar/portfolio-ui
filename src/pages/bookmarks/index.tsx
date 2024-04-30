@@ -4,9 +4,9 @@ import BookmarksPost from "../../components/BookmarksPost";
 const Bookmarks = () => {
   return (
 
-      <div className="mt-10">
+      <div className="mt-10 flex flex-col gap-10">
         <h3 className="text-4xl font-bold tracking-wide">Son Eklenenler</h3>
-        <div className="mt-5">
+        <div >
           <BookmarksPost
             title="atlassian/pragmatic-drag-and-drop"
             description="Fast drag and drop for any experience on any tech stack"

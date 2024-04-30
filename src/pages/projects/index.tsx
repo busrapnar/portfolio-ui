@@ -3,7 +3,7 @@ import ProductCard from "../../components/ProductCard";
 
 const Projects = () => {
   return (
-    <div className="mt-20 ">
+    <div className="mt-10 flex flex-col gap-10">
       <Card className="px-6 py-10 ">
         <CardDescription className="text-xl">
           Kullanıcıların günlük yaşamlarını kolaylaştıran pratik özellikler
@@ -13,7 +13,7 @@ const Projects = () => {
         </CardDescription>
       </Card>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-10">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
         <ProductCard
           imageUrl="https://www.codevisor.com.tr/wp-content/uploads/2022/11/mobil-uygulama-gelistirme.jpg"
           title="Sanal Mağazalar"

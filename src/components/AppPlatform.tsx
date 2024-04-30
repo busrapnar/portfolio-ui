@@ -9,7 +9,7 @@ type Props = {
     path: string;
 }
 
-const SocialMedia = ({
+const AppPlatform = ({
     iconName: Icon,
     title,
     description,
@@ -37,4 +37,4 @@ const SocialMedia = ({
     )
 }
 
-export default SocialMedia;
+export default AppPlatform;
