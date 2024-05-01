@@ -14,7 +14,7 @@ const BookmarksPost = ({
   date,
 }: PostProps) => {
   return (
-    <article className="flex items-center gap-6 py-4 sm:py-6 md:gap-10 border-b border-b-zinc-800">
+    <div className="flex items-center gap-6 py-4 sm:py-6 md:gap-10 border-b border-b-zinc-800">
       <div className="flex grow items-center gap-4">
         <div className="grow">
           <h3 className="font-semibold">
@@ -53,7 +53,7 @@ const BookmarksPost = ({
         </div>
       </div>
       
-    </article>
+    </div>
   );
 };
 

@@ -51,7 +51,7 @@ const Header: React.FC = () => {
             <IoMenu className="h-12 w-12" />
           </button>
         </div>
-        <div className={`lg:flex items-center justify-center gap-5 hidden relative`} ref={menuRef}>
+        <div className={`lg:flex items-center justify-center gap-5 hidden relative`} >
           <NavLink to="/projects">{t("project")}</NavLink>
           <NavLink to="/posts">{t("posts")}</NavLink>
           <NavLink to="/bookmarks">{t("bookmarks")}</NavLink>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
       </nav>
       {/* Hamburger Menu */}
       {isMenuOpen && (
-        <div className="fixed lg:hidden bg-background top-0 right-0 h-full w-64 z-100" ref={menuRef}>
+        <div className="fixed lg:hidden bg-background top-0 right-0 h-full w-64 z-100" >
           <div className="flex justify-end items-center px-4 py-2">
             <button
               aria-label="Close Menu"

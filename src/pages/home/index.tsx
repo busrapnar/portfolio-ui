@@ -50,16 +50,8 @@ const Home = () => {
         </CardDescription>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3">
-        <HelperBox
-          iconName={SlEnergy}
-          title="Rapid MVP 
-          Delivery"
-        />
-        <HelperBox
-          iconName={HiOutlinePaintBrush}
-          title="Human-centered
-          UI & UX"
-        />
+        <HelperBox iconName={SlEnergy} title="Rapid MVP Delivery"/>
+        <HelperBox iconName={HiOutlinePaintBrush}title="Human-centered UI & UX"/>
         <HelperBox iconName={IoCalendarOutline} title="Time Availability" />
         <HelperBox iconName={MdOutlineCloud} title="CI/CD Updates on Cloud" />
         <HelperBox iconName={TbTestPipe} title="Testable code" />
