@@ -3,7 +3,6 @@ import { MdLanguage } from "react-icons/md";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
@@ -23,9 +22,8 @@ export function LanguageToggle() {
           <MdLanguage className="h-[1.2rem] w-[1.2rem]  opacity-60" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => onClick("en")}>
-          <button className="flex gap-1 items-center">
+      <DropdownMenuContent align="end" className="grid gap-4">
+          <button className="flex gap-1 items-center hover:bg-accent py-2 px-1" onClick={() => onClick("en")}>
             <img
               className="w-8 h-6"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
@@ -33,9 +31,8 @@ export function LanguageToggle() {
             />
             <span>English</span>
           </button>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => onClick("tr")}>
-          <button className="flex gap-1 items-center">
+       
+          <button className="flex gap-1 items-center hover:bg-accent py-2 px-1" onClick={() => onClick("tr")}>
             <img
               className="w-8 h-6"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/240px-Flag_of_Turkey.svg.png"
@@ -43,7 +40,6 @@ export function LanguageToggle() {
             />
             <span>Türkçe</span>
           </button>
-        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

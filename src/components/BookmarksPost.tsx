@@ -14,13 +14,13 @@ const BookmarksPost = ({
   date,
 }: PostProps) => {
   return (
-    <article className="flex items-center gap-6 py-4 sm:py-6 md:gap-10 border-b border-b-zinc-200/60 dark:border-b-zinc-800">
+    <article className="flex items-center gap-6 py-4 sm:py-6 md:gap-10 border-b border-b-zinc-800">
       <div className="flex grow items-center gap-4">
         <div className="grow">
           <h3 className="font-semibold">
             <a
               href={link}
-              className="decoration-zinc-600 visited:decoration-zinc-200 dark:visited:decoration-zinc-800"
+              className="decoration-zinc-600 visited:decoration-zinc-800"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -28,7 +28,7 @@ const BookmarksPost = ({
             </a>
           </h3>
           {description && <p className="mt-2 text-white text-opacity-80">{description}</p>}
-          <div className="mt-2 flex items-center space-x-2 font-mono text-sm text-white text-opacity-60 dark:opacity-40">
+          <div className="mt-2 flex items-center space-x-2 font-mono text-sm text-white text-opacity-60 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
