@@ -17,7 +17,7 @@ const PostItem = ({ title, content, date, readTime, link }: Props) => {
             </h3>
             <p className="mt-1 text-lg text-gray-500">{content}</p>
           </header>
-          <footer className="mt-1 flex items-center space-x-2 font-mono text-base uppercase tracking-wider opacity-40">
+          <footer className="mt-1 flex items-center space-x-2 font-mono text-base uppercase tracking-wider text-gray-500/90">
             <time>{date}</time>
             <span>·</span>
             <span>{readTime}</span>
