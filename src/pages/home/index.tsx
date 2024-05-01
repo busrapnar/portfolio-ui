@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold tracking-wide">Biz Kimiz?</h1>
+        <h1 className="text-4xl font-bold tracking-wide text-white">Biz Kimiz?</h1>
         <div className="flex gap-10">
           <div className="flex flex-col items-start gap-8 xl:w-2/3 w-full">
             <p className="text-lg leading-loose text-start text-muted-foreground ">
@@ -32,7 +32,7 @@ const Home = () => {
               bulamadıysanız, doğru yerdesiniz!
             </p>
             <button className="flex items-center gap-2 border-4 border-indigo-500 px-4 py-2">
-              <span className="text-lg">Tanışalım</span>{" "}
+              <span className="text-lg text-white">Tanışalım</span>{" "}
               <PiHandHeartThin size={24} className="text-indigo-500" />
             </button>
           </div>
@@ -42,7 +42,7 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-16 flex flex-col gap-4">
-        <CardTitle className="font-bold text-3xl">Kendine değer kat!</CardTitle>
+        <CardTitle className="font-bold text-3xl text-white">Kendine değer kat!</CardTitle>
         <CardDescription className="font-normal text-base font-montserrat">
           İyi bir uygulama için, doğru bir başlangıç gerekir. Java ve React
           teknolojisinin gücünü kullanarak yaptığımız uygulamalar ile sizde
