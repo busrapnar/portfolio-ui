@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 export function LanguageToggle() {
   const { i18n } = useTranslation();
 
-  const clickHandle = async (lang: string) => {
+  const onClick = async (lang: string) => {
     await i18n.changeLanguage(lang);
   };
 
@@ -24,7 +24,7 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => clickHandle("en")}>
+        <DropdownMenuItem onClick={() => onClick("en")}>
           <div className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
@@ -34,7 +34,7 @@ export function LanguageToggle() {
             <span>English</span>
           </div>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => clickHandle("tr")}>
+        <DropdownMenuItem onClick={() => onClick("tr")}>
           <div className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
