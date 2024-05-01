@@ -1,46 +1,51 @@
 const Contact = () => {
   return (
-    <div className="flex min-h-screen items-center justify-start">
-      <div className="mx-auto w-full max-w-lg">
-        <h1 className="text-4xl font-medium">Contact us</h1>
-        <p className="mt-3">Email us at example@domain.com or message us here:</p>
-
-        <form action="" className="mt-10">
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <input
-                type="text"
-                name="name"
-                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                placeholder=" Your Name"
-              />
-              
-            </div>
-            <div>
-              <input
-                type="text"
-                name="email"
-                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                placeholder="Your Email"
-              />
-              
-            </div>
-            <div className=" col-span-2">
-              <textarea
-                name="message"
-                rows={3}
-                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                placeholder="Your message"
-              ></textarea>
-            </div>
+    <div className="mt-20 flex">
+      <div className="w-full max-w-5xl">
+        <div className="flex flex-col gap-5">
+          <h1 className="text-4xl font-bold tracking-wide text-white">
+            Let's Talk
+          </h1>
+          <p className="text-xl text-white text-opacity-45">
+            Email us at example@domain.com or message us here:
+          </p>
+        </div>
+        <form action="" method="POST" className="mt-5 flex flex-col gap-5">
+          <div className="mb-5">
+            <label className="mb-3 block text-base">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full Name"
+              className="w-full rounded-[6px] bg-accent border py-3 px-6 text-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
           </div>
-          <button
-            type="submit"
-            className="mt-5 rounded-[4px] bg-black px-10 py-2 text-white"
-          >
-            Send Message
-          </button>
+          <div className="mb-5">
+            <label className="mb-3 block text-base">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@domain.com"
+              className="w-full rounded-[6px] bg-accent border py-3 px-6 text-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div className="mb-5">
+            <label className="mb-3 block text-base">Message</label>
+            <textarea
+              rows={4}
+              name="message"
+              id="message"
+              placeholder="Type your message"
+              className="w-full resize-none rounded-[6px] bg-accent border py-3 px-6 text-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            ></textarea>
+          </div>
+          <div className="self-end">
+            <button className="hover:shadow-form rounded-[6px] border border-indigo-500 py-3 px-8 text-base font-semibold text-white outline-none">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
