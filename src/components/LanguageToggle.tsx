@@ -25,24 +25,24 @@ export function LanguageToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => onClick("en")}>
-          <div className="flex gap-1 items-center">
+          <button className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
               alt=""
             />
             <span>English</span>
-          </div>
+          </button>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => onClick("tr")}>
-          <div className="flex gap-1 items-center">
+          <button className="flex gap-1 items-center">
             <img
               className="w-8 h-6"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/240px-Flag_of_Turkey.svg.png"
               alt=""
             />
             <span>Türkçe</span>
-          </div>
+          </button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
