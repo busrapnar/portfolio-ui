@@ -14,7 +14,7 @@ const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
   return (
     <div className="flex flex-col bg-accent/20">
       <div className="flex md:flex-row rounded-xl shadow-lg p-3 mx-auto border border-border">
-        <div className="md:w-5/12 h-full  rounded-lg ">
+        <div className="md:w-5/12 h-full hidden md:block rounded-lg ">
           <img src={imageUrl} className="rounded-[4px] w-full h-full" />
         </div>
         <div className="w-full md:w-7/12 justify-center flex flex-col space-y-2 p-3">
