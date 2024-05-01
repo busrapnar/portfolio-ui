@@ -1,25 +1,25 @@
 # PORTFOLIO-UI
 Bu proje kişisel portfoliolar için yaratılmıştır.
-# İçindekiler
+## İçindekiler
 Proje Hakkında
 Kurulum
 Kullanım
 Katılım
 Lisans
 
-# Proje Hakkında
+## Proje Hakkında
 Bu proje, React ve Vite kullanılarak oluşturulmuş bir web uygulamasıdır. Projede, projects, bookmarks ve posts adında üç ana menü bulunmaktadır. Uygulama, Tailwind CSS ve Shadcn Ui kullanılarak tasarlanmıştır.
 
-# Kurulum
+## Kurulum
 Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
-# Repoyu klonlayın:
+## Repoyu klonlayın:
 git clone https://github.com/busrapnar/portfolio-ui.git
 
-# Proje dizinine gidin:
+## Proje dizinine gidin:
 cd portfolio-ui
 
-# Bağımlılıkları yükleyin:
+## Bağımlılıkları yükleyin:
 npm install
 
 # Kullanım
