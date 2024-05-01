@@ -35,6 +35,6 @@
       @apply border-border font-poppins;
     }
     body {
-      @apply bg-background text-foreground;
+      @apply bg-[#101415] text-foreground;
     }
   }

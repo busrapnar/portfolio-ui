@@ -10,6 +10,7 @@ import { CiPlay1 } from "react-icons/ci";
 import { MdOutlineCloud } from "react-icons/md";
 import AppPlatform from "../../components/AppPlatform";
 import StackBox2 from "../../components/StackBox2";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -31,10 +32,10 @@ const Home = () => {
               hizmet sağlayan bir ekibiz. Eğer siz de hala aradığınız ekibi
               bulamadıysanız, doğru yerdesiniz!
             </p>
-            <button className="flex items-center gap-2 border-4 border-indigo-500 px-4 py-2">
+            <Link to={"/contact"} className="flex items-center gap-2 border-4 border-indigo-500 px-4 py-2">
               <span className="text-lg text-white">Tanışalım</span>{" "}
               <PiHandHeartThin size={24} className="text-indigo-500" />
-            </button>
+            </Link>
           </div>
           <div className="w-1/3 h-full hidden xl:block">
             <StackBox2 />

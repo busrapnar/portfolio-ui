@@ -5,6 +5,7 @@ import Bookmarks from "../pages/bookmarks";
 import Posts from "../pages/posts";
 import PostDetail from "../pages/posts/post-details";
 import Projects from "../pages/projects";
+import Contact from "../pages/contact";
 export default function Router(){
     return(
         <BrowserRouter>
@@ -15,6 +16,7 @@ export default function Router(){
                 <Route path="/projects" element={<Projects/>} />
                 <Route path="/posts" element={<Posts/>} />
                 <Route path="/posts/post-detail" element={<PostDetail/>} />
+                <Route path="/contact" element={<Contact/>} />
                 <Route />
             </Route>
         </Routes>
