@@ -37,9 +37,9 @@ const Header: React.FC = () => {
     <header className="relative py-5 max-w-screen-xl mx-auto">
       <nav className="flex items-center justify-between text-lg ">
         <Avatar
-          name="Mustafa ÜNLÜ"
-          role="Software Developer"
-          imageSrc="./images/logo.jpeg"
+          name="Büşra PINAR"
+          role="Frontend Developer"
+          imageSrc="./images/logo.png"
         />
         <div className="flex items-center gap-4 lg:hidden">
           <button

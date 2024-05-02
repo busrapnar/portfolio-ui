@@ -12,6 +12,50 @@ import AppPlatform from "../../components/AppPlatform";
 import StackBox2 from "../../components/StackBox2";
 import { Link } from "react-router-dom";
 
+const helperData = [
+  {
+    icon: SlEnergy,
+    title: "Rapid MVP Delivery"
+  },
+  {
+    icon: HiOutlinePaintBrush,
+    title: "Human-centered UI & UX"
+  },
+  {
+    icon: IoCalendarOutline,
+    title: "Time Availability"
+  },
+  {
+    icon: MdOutlineCloud,
+    title: "CI/CD Updates on Cloud"
+  },
+  {
+    icon: TbTestPipe,
+    title: "Testable code"
+  },
+  {
+    icon: CiPlay1,
+    title: "The Perfect Beginning"
+  }
+];
+
+const platformData = [
+  {
+    iconName: FaGooglePlay,
+    title: "Google Play'de Uygulamalarımızı İncele",
+    description: "Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, Google Play'den uygulamalarımızı indirebilirsiniz",
+    addClass: "bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]",
+    path: "/#"
+  },
+  {
+    iconName: FaAppStore,
+    title: "App Store'da Uygulamalarımızı İncele",
+    description: "Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, App Store'dan uygulamalarımızı indirebilirsiniz",
+    addClass: "bg-gradient-to-l from-[#0470b9] via-[#057d93] to-[#035a95]",
+    path: "/#"
+  }
+];
+
 const Home = () => {
   return (
     <div className="flex flex-col gap-20 mt-20">
@@ -51,12 +95,9 @@ const Home = () => {
         </CardDescription>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3">
-        <HelperBox iconName={SlEnergy} title="Rapid MVP Delivery"/>
-        <HelperBox iconName={HiOutlinePaintBrush}title="Human-centered UI & UX"/>
-        <HelperBox iconName={IoCalendarOutline} title="Time Availability" />
-        <HelperBox iconName={MdOutlineCloud} title="CI/CD Updates on Cloud" />
-        <HelperBox iconName={TbTestPipe} title="Testable code" />
-        <HelperBox iconName={CiPlay1} title="The Perfect Beginning" />
+        {helperData.map((helper, index) => (
+          <HelperBox key={index} iconName={helper.icon} title={helper.title} />
+        ))}
       </div>
       <div className="mt-16 flex flex-col gap-4">
         <CardTitle className="font-bold text-3xl">
@@ -68,20 +109,16 @@ const Home = () => {
         </CardDescription>
       </div>
       <div className="mt-[-1.5rem] grid gap-8 md:grid-cols-1 lg:grid-cols-2 ">
-        <AppPlatform
-          iconName={FaGooglePlay}
-          title="Google Play'de Uygulamalarımızı İncele"
-          description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, Google Play'den uygulamalarımzı indirebilirsiniz"
-          addClass="bg-gradient-to-l from-[#01875f] via-[#056559] to-[#01875f]"
-          path="/projects"
-        />
-        <AppPlatform
-          iconName={FaAppStore}
-          title="App Store'da Uygulamalarımızı İncele"
-          description="Uygulamalarımızı incelemek için projeler sayfasını ziyaret edebilir, App Store'dan uygulamalarımzı indirebilirsiniz"
-          addClass="bg-gradient-to-l from-[#0470b9] via-[#057d93] to-[#035a95]"
-          path="/projects"
-        />
+        {platformData.map((platform, index) => (
+          <AppPlatform
+            key={index}
+            iconName={platform.iconName}
+            title={platform.title}
+            description={platform.description}
+            addClass={platform.addClass}
+            path={platform.path}
+          />
+        ))}
       </div>
     </div>
   );
