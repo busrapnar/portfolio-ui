@@ -9,11 +9,8 @@ type Props = {
 };
 
 const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
-  
-
   return (
-    <div className="flex flex-col bg-accent/20">
-      <div className="flex md:flex-row rounded-xl  p-3 mx-auto border border-border">
+      <div className="flex md:flex-row rounded-xl p-3 h-full mx-auto border border-border bg-accent/20 ">
         <div className="md:w-5/12 h-full hidden md:block rounded-lg ">
           <img src={imageUrl} className="rounded-[4px] w-full h-full" />
         </div>
@@ -28,7 +25,7 @@ const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
           <Link to={path} className='border border-indigo-500 rounded-[6px] hover:bg-indigo-500  px-4 py-2 w-32 text-center '>Görüntüle</Link>
         </div>
       </div>
-    </div>
+   
   );
 };
 
