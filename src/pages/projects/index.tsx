@@ -22,6 +22,27 @@ const productData = [
     tags: ["react", "java"],
     description: "Çeşitli sektörler için özelleştirilebilir e-ticaret platformları geliştiriyoruz. Güçlü altyapılarımız ve kullanıcı dostu arayüzlerimizle müşterilerinizi çevrimiçi platformlara taşımanıza yardımcı oluyoruz.",
     path: "/#"
+  },
+  {
+    imageUrl: "https://images.pexels.com/photos/3585088/pexels-photo-3585088.jpeg?auto=compress&cs=tinysrgb&w=400",
+    title: "Sanal Mağazalar",
+    tags: ["react", "java"],
+    description: "Farklı sektörler için özelleştirilebilir sanal mağaza çözümleri sunuyoruz. Mobil ve web platformlarında, kullanıcı dostu arayüzlerle güçlü altyapıları bir araya getirerek müşterilerinizin ihtiyaçlarını karşılıyoruz.",
+    path: "/#"
+  },
+  {
+    imageUrl: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=400",
+    title: "Mobil Uygulama Geliştirme",
+    tags: ["react", "java"],
+    description: "Mobil uygulama geliştirme sürecinde size özel çözümler sunuyoruz. En son teknolojileri kullanarak iOS ve Android platformlarında güvenilir ve kullanıcı dostu mobil uygulamalar geliştiriyoruz.",
+    path: "/#"
+  },
+  {
+    imageUrl: "https://images.pexels.com/photos/3585089/pexels-photo-3585089.jpeg?auto=compress&cs=tinysrgb&w=400",
+    title: "E-ticaret Platformları",
+    tags: ["react", "java"],
+    description: "Çeşitli sektörler için özelleştirilebilir e-ticaret platformları geliştiriyoruz. Güçlü altyapılarımız ve kullanıcı dostu arayüzlerimizle müşterilerinizi çevrimiçi platformlara taşımanıza yardımcı oluyoruz.",
+    path: "/#"
   }
 ];
 

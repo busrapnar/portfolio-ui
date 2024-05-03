@@ -10,11 +10,11 @@ type Props = {
 
 const ProductCard= ({ imageUrl, title, tags, description, path } : Props) => {
   return (
-      <div className="flex md:flex-row rounded-xl p-3 h-full mx-auto border border-border bg-accent/20 ">
-        <div className="md:w-5/12 h-full hidden md:block rounded-lg ">
-          <img src={imageUrl} className="rounded-[4px] w-full h-full" />
+      <div className="flex md:flex-row items-center rounded-xl p-3 h-full mx-auto border border-border bg-accent/20 ">
+        <div className="md:w-5/12 hidden md:block ">
+          <img src={imageUrl} className="rounded-[8px] w-full h-96" />
         </div>
-        <div className="w-full md:w-7/12 justify-center flex flex-col space-y-2 p-3">
+        <div className=" md:w-7/12 justify-between flex flex-col space-y-2 p-3">
           <h3 className="font-bold md:text-3xl text-xl">{title}</h3>
           <div className='flex gap-2'>
             {tags.map((tag, index) => (
