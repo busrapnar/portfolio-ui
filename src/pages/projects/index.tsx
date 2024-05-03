@@ -1,5 +1,5 @@
 import { Card, CardDescription } from "../../components/ui/card";
-import ProductCard from "../../components/ProductCard";
+import ProductCardAlternative from "../../components/ProductCardAlternative";
 
 const productData = [
   {
@@ -60,7 +60,7 @@ const Projects = () => {
 
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
         {productData.map((product, index) => (
-          <ProductCard
+          <ProductCardAlternative
             key={index}
             imageUrl={product.imageUrl}
             title={product.title}
