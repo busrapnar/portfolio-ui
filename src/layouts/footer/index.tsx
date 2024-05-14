@@ -5,7 +5,7 @@ import { MdOutlineEmail } from "react-icons/md";
 const Footer = () => {
   
   return (
-    <footer className="mt-40 pb-5 flex justify-center items-center max-w-screen-xl mx-auto">
+    <footer className="mt-40 pb-5 flex justify-center items-center max-w-screen-lgmx-auto">
       <div className="flex items-center space-x-3">
         <Link
           to="/"
